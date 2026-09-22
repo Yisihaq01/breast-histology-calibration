@@ -1,0 +1,15 @@
+{
+    "val_loss": 0.1755934296764727,
+    "auroc": 0.9588467798186469,
+    "auprc": 0.9825757729968545,
+    "balanced_accuracy": 0.9036436709070981,
+    "accuracy": 0.8870967741935484,
+    "sensitivity": 0.857707509881423,
+    "specificity": 0.9495798319327731,
+    "n_images": 372,
+    "best_epoch": 2,
+    "best_auroc": 0.9588467798186469,
+    "baseline_type": "Development-only frozen-backbone ResNet-18",
+    "training_folds": "Development folds 2 and 3",
+    "validation_fold": "Development fold 1"
+}

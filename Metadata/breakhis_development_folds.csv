@@ -1,0 +1,50 @@
+patient_id,diagnosis_code,diagnosis,subtype_code,subtype,split,development_fold
+14-29960CD,B,Benign,A,Adenosis,development,1
+14-14134,B,Benign,F,Fibroadenoma,development,1
+14-21998CD,B,Benign,F,Fibroadenoma,development,1
+14-13200,B,Benign,TA,Tubular adenoma,development,1
+14-3411F,B,Benign,TA,Tubular adenoma,development,1
+14-13993,M,Malignant,DC,Ductal carcinoma,development,1
+14-14946,M,Malignant,DC,Ductal carcinoma,development,1
+14-16448,M,Malignant,DC,Ductal carcinoma,development,1
+14-20629,M,Malignant,DC,Ductal carcinoma,development,1
+14-2523,M,Malignant,DC,Ductal carcinoma,development,1
+14-2985,M,Malignant,DC,Ductal carcinoma,development,1
+14-4364,M,Malignant,DC,Ductal carcinoma,development,1
+14-6241,M,Malignant,DC,Ductal carcinoma,development,1
+14-16196,M,Malignant,LC,Lobular carcinoma,development,1
+14-13418DE,M,Malignant,MC,Mucinous carcinoma,development,1
+14-18842,M,Malignant,MC,Mucinous carcinoma,development,1
+14-9146,M,Malignant,PC,Papillary carcinoma,development,1
+14-22549CD,B,Benign,A,Adenosis,development,2
+14-14134E,B,Benign,F,Fibroadenoma,development,2
+14-23222AB,B,Benign,F,Fibroadenoma,development,2
+14-29315EF,B,Benign,PT,Phyllodes tumor,development,2
+14-16184,B,Benign,TA,Tubular adenoma,development,2
+14-13412,M,Malignant,DC/LC,DC/LC ambiguous,development,2
+14-11520,M,Malignant,DC,Ductal carcinoma,development,2
+14-11951,M,Malignant,DC,Ductal carcinoma,development,2
+14-12312,M,Malignant,DC,Ductal carcinoma,development,2
+14-16188,M,Malignant,DC,Ductal carcinoma,development,2
+14-3909,M,Malignant,DC,Ductal carcinoma,development,2
+14-5287,M,Malignant,DC,Ductal carcinoma,development,2
+14-5694,M,Malignant,DC,Ductal carcinoma,development,2
+14-15570,M,Malignant,LC,Lobular carcinoma,development,2
+14-10147,M,Malignant,MC,Mucinous carcinoma,development,2
+14-12465,M,Malignant,PC,Papillary carcinoma,development,2
+14-23060AB,B,Benign,F,Fibroadenoma,development,3
+14-9133,B,Benign,F,Fibroadenoma,development,3
+14-15275,B,Benign,TA,Tubular adenoma,development,3
+14-19854C,B,Benign,TA,Tubular adenoma,development,3
+14-10926,M,Malignant,DC,Ductal carcinoma,development,3
+14-14015,M,Malignant,DC,Ductal carcinoma,development,3
+14-15572,M,Malignant,DC,Ductal carcinoma,development,3
+14-16601,M,Malignant,DC,Ductal carcinoma,development,3
+14-16875,M,Malignant,DC,Ductal carcinoma,development,3
+14-2773,M,Malignant,DC,Ductal carcinoma,development,3
+14-2980,M,Malignant,DC,Ductal carcinoma,development,3
+14-4372,M,Malignant,DC,Ductal carcinoma,development,3
+14-12773,M,Malignant,MC,Mucinous carcinoma,development,3
+14-13413,M,Malignant,MC,Mucinous carcinoma,development,3
+14-15704,M,Malignant,PC,Papillary carcinoma,development,3
+15-190EF,M,Malignant,PC,Papillary carcinoma,development,3
