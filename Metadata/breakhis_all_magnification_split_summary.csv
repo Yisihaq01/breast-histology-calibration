@@ -1,0 +1,13 @@
+magnification,split_key,images,patients
+40,calibration,382,16
+40,development,1133,49
+40,test,446,16
+100,calibration,367,16
+100,development,1180,49
+100,test,501,16
+200,calibration,363,16
+200,development,1138,49
+200,test,480,16
+400,calibration,338,16
+400,development,1020,49
+400,test,436,16
