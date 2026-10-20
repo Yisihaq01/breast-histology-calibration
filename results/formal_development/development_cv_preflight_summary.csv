@@ -1,0 +1,4 @@
+validation_fold,training_patients,validation_patients,training_images,validation_images,training_patches,validation_patches
+1,32,17,761,372,12034,5861
+2,33,16,702,431,11085,6810
+3,33,16,803,330,12671,5224
