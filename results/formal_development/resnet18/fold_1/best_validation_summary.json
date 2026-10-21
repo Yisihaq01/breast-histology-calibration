@@ -1,0 +1,44 @@
+{
+  "architecture": "resnet18",
+  "validation_fold": 1,
+  "best_epoch": 5,
+  "best_validation_auroc": 0.9924934400637725,
+  "n_training_patients": 32,
+  "n_validation_patients": 17,
+  "n_validation_images": 372,
+  "selection_metric": "image_auroc",
+  "checkpoint_saved_separately": "/content/cis631_model_checkpoints/resnet18_fold1_best.pt",
+  "training_config": {
+    "architecture": "resnet18",
+    "pretrained_weights": "IMAGENET1K_V1",
+    "finetune_layers": [
+      "layer4",
+      "fc"
+    ],
+    "freeze_batchnorm_statistics": true,
+    "batch_size": 32,
+    "epochs": 5,
+    "lr_layer4": 0.0001,
+    "lr_fc": 0.0005,
+    "weight_decay": 0.0001,
+    "seed": 631,
+    "selection_metric": "image_auroc",
+    "validation_folds": [
+      1,
+      2,
+      3
+    ]
+  },
+  "best_epoch_metrics": {
+    "epoch": 5,
+    "training_loss": 0.01034753554306516,
+    "auroc": 0.9924934400637725,
+    "auprc": 0.9966568314188237,
+    "balanced_accuracy": 0.9404623509482845,
+    "ece_10": 0.07469565039099041,
+    "brier": 0.06320829065965597,
+    "nll": 0.25679142647716896,
+    "n_images": 372,
+    "n_patients": 17
+  }
+}
