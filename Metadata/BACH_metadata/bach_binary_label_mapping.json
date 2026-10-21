@@ -1,0 +1,15 @@
+{
+  "dataset": "BACH",
+  "mapping": {
+    "Normal": 0,
+    "Benign": 0,
+    "InSitu": 1,
+    "Invasive": 1
+  },
+  "binary_labels": {
+    "0": "benign",
+    "1": "malignant"
+  },
+  "role": "external_evaluation_only",
+  "note": "Normal tissue is included in the benign binary category. Original four-class labels are preserved."
+}

@@ -1,0 +1,28 @@
+{
+  "dataset": "BACH",
+  "source": "https://zenodo.org/records/3632035",
+  "source_subset": "challenge_training_microscopy",
+  "archive_md5": "8ae1801334aa943c44627c1eef3631b2",
+  "n_images": 400,
+  "class_counts": {
+    "Benign": 100,
+    "InSitu": 100,
+    "Invasive": 100,
+    "Normal": 100
+  },
+  "binary_counts": {
+    "0": 200,
+    "1": 200
+  },
+  "dimensions": [
+    {
+      "width": 2048,
+      "height": 1536,
+      "images": 400
+    }
+  ],
+  "failed_images": 0,
+  "exact_duplicate_groups": 0,
+  "patient_ids_verified": false,
+  "preprocessing_status": "pending"
+}
