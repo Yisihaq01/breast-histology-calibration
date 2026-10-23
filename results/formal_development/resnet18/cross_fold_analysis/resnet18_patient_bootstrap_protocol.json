@@ -1,0 +1,19 @@
+{
+  "architecture": "resnet18",
+  "evaluation": "development_out_of_fold",
+  "resampling_unit": "patient",
+  "stratification": "frozen_development_validation_fold",
+  "fold_patient_counts": {
+    "1": 17,
+    "2": 16,
+    "3": 16
+  },
+  "replicates": 1000,
+  "seed": 631,
+  "skipped_replicates": 0,
+  "interval_method": "percentile_95",
+  "comparison": "mean_probability_minus_mean_logit",
+  "paired_resamples": true,
+  "model_retraining": false,
+  "calibration_or_test_used": false
+}

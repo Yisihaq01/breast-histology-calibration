@@ -1,0 +1,20 @@
+{
+  "architecture": "resnet18",
+  "evaluation": "development_out_of_fold",
+  "images": 1133,
+  "patients": 49,
+  "benign_images": 329,
+  "malignant_images": 804,
+  "auroc": 0.9676957159491297,
+  "auprc": 0.9853268028880631,
+  "balanced_accuracy": 0.9113607494442679,
+  "ece_10": 0.056471600073190645,
+  "brier": 0.0657099118926552,
+  "nll": 0.30586483656748675,
+  "ece_definition": "positive_class_equal_width_10",
+  "nll_clipping": 1e-07,
+  "checkpoint_selection": "highest_development_validation_auroc",
+  "checkpoint_tie_rule": "earliest_epoch",
+  "held_out_test_used": false,
+  "calibration_partition_used": false
+}

@@ -1,0 +1,2 @@
+architecture,evaluation,images,patients,benign_images,malignant_images,auroc,auprc,balanced_accuracy,ece_10,brier,nll,ece_definition,nll_clipping,checkpoint_selection,checkpoint_tie_rule,held_out_test_used,calibration_partition_used
+resnet18,development_out_of_fold,1133,49,329,804,0.9676957159491297,0.9853268028880631,0.9113607494442679,0.056471600073190645,0.0657099118926552,0.30586483656748675,positive_class_equal_width_10,1e-07,highest_development_validation_auroc,earliest_epoch,False,False

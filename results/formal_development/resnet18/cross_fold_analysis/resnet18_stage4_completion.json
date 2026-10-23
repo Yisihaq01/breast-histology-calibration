@@ -1,0 +1,19 @@
+{
+  "stage": 4,
+  "title": "ResNet-18 Development Cross-Fold Analysis",
+  "status": "analysis_complete",
+  "development_patients": 49,
+  "development_images": 1133,
+  "validation_folds": 3,
+  "primary_aggregation": "mean_logit",
+  "alternative_aggregation": "mean_probability",
+  "primary_pooled_auroc": 0.967696,
+  "primary_pooled_ece_10": 0.056472,
+  "primary_pooled_brier": 0.06571,
+  "bootstrap_replicates": 1000,
+  "bootstrap_resampling_unit": "patient",
+  "bootstrap_seed": 631,
+  "held_out_test_used": false,
+  "calibration_partition_used": false,
+  "next_stage": "EfficientNet-B0 Development Comparison"
+}
