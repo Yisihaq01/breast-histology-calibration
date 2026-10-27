@@ -1,0 +1,43 @@
+{
+  "stage": 5,
+  "status": "completed",
+  "selected_primary_architecture": "efficientnet_b0",
+  "development_comparator": "resnet18",
+  "selection_basis": "Holistic Development comparison of discrimination, probability quality, patient-level uncertainty and aggregation sensitivity.",
+  "selection_is_formal_significance_claim": false,
+  "development_patients": 49,
+  "development_images": 1133,
+  "development_patches": 17895,
+  "validation_folds": 3,
+  "selected_epochs": {
+    "fold_1": 5,
+    "fold_2": 5,
+    "fold_3": 4
+  },
+  "efficientnet_favorable_point_estimates": {
+    "primary": 5,
+    "alternative": 5,
+    "total_metrics": 6
+  },
+  "patient_bootstrap_replicates": 1000,
+  "primary_aggregation": "sigmoid_mean_patch_logit",
+  "alternative_aggregation": "mean_sigmoid_patch_logit",
+  "primary_nll_delta_ci_excludes_zero": true,
+  "alternative_nll_delta_ci_excludes_zero": false,
+  "stage6_plan": {
+    "architecture": "efficientnet_b0",
+    "initialization": "fresh_imagenet_pretrained",
+    "training_patients": 49,
+    "epochs": 5,
+    "epoch_budget_locked_using_development": true,
+    "calibration_patients_used_for_training": false,
+    "test_patients_used_for_training": false
+  },
+  "limitations": [
+    "Development-based architecture selection",
+    "Confidence intervals conditional on fitted checkpoints",
+    "No retraining variability represented in bootstrap",
+    "Exploratory multi-metric comparison",
+    "Independent generalization not yet established"
+  ]
+}

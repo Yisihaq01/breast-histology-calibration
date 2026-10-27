@@ -1,0 +1,18 @@
+{
+  "analysis": "alternative_aggregation_paired_bootstrap",
+  "seed": 631,
+  "bootstrap_replicates": 1000,
+  "sampling_unit": "patient",
+  "stratification": "development_fold",
+  "same_patient_draws_as_primary_analysis": true,
+  "original_primary_replicates_verified": true,
+  "primary_aggregation": "sigmoid_mean_patch_logit",
+  "alternative_aggregation": "mean_sigmoid_patch_logit",
+  "architecture_difference": "efficientnet_b0_minus_resnet18",
+  "interval_method": "percentile_95",
+  "checkpoint_selection_unchanged": true,
+  "conditional_on_selected_checkpoints": true,
+  "test_data_used": false,
+  "calibration_data_used": false,
+  "external_data_used": false
+}

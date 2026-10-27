@@ -1,0 +1,3 @@
+architecture,images,classification_changes,mean_absolute_probability_change
+resnet18,1133,3,0.03457325619129139
+efficientnet_b0,1133,8,0.03529216693069938

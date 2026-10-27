@@ -1,0 +1,24 @@
+{
+  "analysis": "paired_patient_level_bootstrap",
+  "seed": 631,
+  "replicates": 1000,
+  "attempts": 1000,
+  "single_class_draws_skipped": 0,
+  "sampling_unit": "patient",
+  "stratification": "frozen_development_fold",
+  "patients_per_fold": {
+    "1": 17,
+    "2": 16,
+    "3": 16
+  },
+  "sampling_with_replacement": true,
+  "all_images_retained_for_sampled_patient": true,
+  "same_patient_draws_for_both_architectures": true,
+  "metric_unit": "image",
+  "primary_aggregation": "mean_patch_logit_then_sigmoid",
+  "confidence_interval": "percentile_2.5_97.5",
+  "fixed_decision_threshold": 0.5,
+  "conditional_on_fitted_fold_checkpoints": true,
+  "model_training_repeated": false,
+  "independent_test_evaluation": false
+}

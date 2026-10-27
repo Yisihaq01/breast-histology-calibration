@@ -1,0 +1,22 @@
+{
+  "architecture": "efficientnet_b0",
+  "fold": 3,
+  "selected_epoch": 4,
+  "validation_patients": 16,
+  "validation_images": 330,
+  "validation_patches": 5224,
+  "best_validation_auroc": 0.9948667932857657,
+  "checkpoint_filename": "efficientnet_b0_fold_3_best.pt",
+  "checkpoint_sha256": "89f4acccba812355539528a7546433c1fec4c5e84bf1f3252df64c792a67e7f4",
+  "checkpoint_size_bytes": 16321351,
+  "artifact_sha256": {
+    "training_history.csv": "e694ac5c28751ff5eaf5f394f861bf957475043c4a4e7b774ef12d82f98081f2",
+    "best_validation_patch_predictions.csv": "7034d7f7d604f0197cc47999bd12dd29d6c882b756d111f05683dabd400b1f5d",
+    "best_validation_image_predictions.csv": "8b0d8f57fd7c0df5142a13139e0b6610ed8d2a07a28587631af488278e4472d2",
+    "best_validation_summary.json": "1431a6d1e8cd6f82ea01e9b56942c32d7e0a32b9c15721ddda00780bd1a45953"
+  },
+  "training_completed": true,
+  "calibration_data_used": false,
+  "test_data_used": false,
+  "external_data_used": false
+}

@@ -1,0 +1,32 @@
+{
+  "architecture": "efficientnet_b0",
+  "fold": 3,
+  "training_patients": 33,
+  "validation_patients": 16,
+  "training_images": 803,
+  "validation_images": 330,
+  "training_patches": 12671,
+  "validation_patches": 5224,
+  "epochs_completed": 5,
+  "training_completed": true,
+  "selected_epoch": 4,
+  "selection_metric": "image_auroc",
+  "best_validation_auroc": 0.9948667932857657,
+  "selection_tie_rule": "earliest_epoch",
+  "primary_aggregation": "mean_logit",
+  "positive_class_weight": 0.45226361031518625,
+  "total_parameters": 4008829,
+  "trainable_parameters": 1130673,
+  "seed": 631,
+  "selected_validation_metrics": {
+    "auroc": 0.9948667932857657,
+    "auprc": 0.9984514962837038,
+    "balanced_accuracy": 0.9401468097120271,
+    "ece_10": 0.02457370754093484,
+    "brier": 0.026359844333528466,
+    "nll": 0.08741098673511781
+  },
+  "calibration_data_used": false,
+  "test_data_used": false,
+  "external_data_used": false
+}

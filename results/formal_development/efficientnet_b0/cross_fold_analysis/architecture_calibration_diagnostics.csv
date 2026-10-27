@@ -1,0 +1,3 @@
+architecture,patients,images,calibration_intercept_in_large,calibration_intercept_free,calibration_slope
+resnet18,49,1133,0.9921633290413564,0.5816629356131441,0.39836339945205024
+efficientnet_b0,49,1133,-0.758507757098056,-0.3978529966032266,0.47659184674498245
