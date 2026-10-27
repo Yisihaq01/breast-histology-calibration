@@ -1,0 +1,15 @@
+{
+  "architecture": "efficientnet_b0",
+  "fold": 1,
+  "selected_epoch": 5,
+  "validation_images": 372,
+  "validation_patients": 17,
+  "validation_patches": 5861,
+  "best_validation_auroc": 0.9889394492975055,
+  "checkpoint_filename": "efficientnet_b0_fold_1_best.pt",
+  "checkpoint_sha256": "387faf450467c89809df1c5f23d039d4ea5f0a77536f420d398c6013e035dd34",
+  "checkpoint_size_bytes": 16321351,
+  "training_completed": true,
+  "test_data_used": false,
+  "calibration_data_used": false
+}
