@@ -1,0 +1,21 @@
+{
+  "stage": 6,
+  "architecture": "efficientnet_b0",
+  "training_complete": true,
+  "epochs": 5,
+  "patients": 49,
+  "images": 1133,
+  "patches": 17895,
+  "selected_checkpoint": "fixed_epoch_5",
+  "checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "independent_model_reconstruction": true,
+  "strict_checkpoint_loading": true,
+  "forward_pass_verified": true,
+  "all_epoch_hashes_verified": true,
+  "final_training_loss": 0.0123816448675977,
+  "interruption_recovery": "Resumed from verified Epoch 1 checkpoint",
+  "persistent_worker_rng_exact_replay": false,
+  "calibration_used": false,
+  "test_used": false,
+  "external_data_used": false
+}

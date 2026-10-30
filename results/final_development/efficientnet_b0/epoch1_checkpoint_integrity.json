@@ -1,0 +1,13 @@
+{
+  "epoch": 1,
+  "checkpoint_filename": "efficientnet_b0_final_epoch1_resume.pt",
+  "checkpoint_sha256": "a61ab8368c91a654c738030dd202630fe041d5b00ba0b8e1e7658092af92538e",
+  "checkpoint_size_bytes": 25429750,
+  "checkpoint_reload_passed": true,
+  "optimizer_state_saved": true,
+  "grad_scaler_state_saved": true,
+  "rng_states_saved": true,
+  "batchnorm_running_statistics_unchanged": true,
+  "source_training_function_sha256": "6af08bbc2f34fa393f8c5dad2b10465d50acfad62f5894a9c803a4d1f5e78268",
+  "development_manifest_sha256": "07cab77292894938a7ca7655239dcfec40e3a79e34b83042888b616da13d05b4"
+}

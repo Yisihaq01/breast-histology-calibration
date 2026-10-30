@@ -1,0 +1,17 @@
+{
+  "architecture": "efficientnet_b0",
+  "training_completed": true,
+  "epochs_completed": 5,
+  "checkpoint_selected": "fixed_epoch_5",
+  "checkpoint_filename": "efficientnet_b0_final_epoch5.pt",
+  "checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "development_patients": 49,
+  "development_images": 1133,
+  "development_patches": 17895,
+  "resumed_from_verified_epoch": 1,
+  "persistent_worker_rng_exactly_restored": false,
+  "validation_used": false,
+  "calibration_used": false,
+  "test_used": false,
+  "external_data_used": false
+}

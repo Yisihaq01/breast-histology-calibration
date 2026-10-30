@@ -1,0 +1,9 @@
+{
+  "architecture": "efficientnet_b0",
+  "epochs_completed": 5,
+  "epochs_planned": 5,
+  "latest_training_loss": 0.01238164486759778,
+  "latest_checkpoint": "/content/CIS631_model_checkpoints/efficientnet_b0/final_development/efficientnet_b0_final_epoch5.pt",
+  "validation_performed": false,
+  "training_complete": true
+}
