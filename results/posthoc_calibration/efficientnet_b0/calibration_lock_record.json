@@ -1,0 +1,34 @@
+{
+  "stage": 7,
+  "status": "completed_and_locked",
+  "architecture": "efficientnet_b0",
+  "final_checkpoint_epoch": 5,
+  "final_checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "fitting_partition": "Calibration",
+  "fitting_patients": 16,
+  "fitting_images": 382,
+  "fitting_patches": 6079,
+  "aggregation": "mean_patch_logit",
+  "calibration_sample_unit": "source_image",
+  "temperature_scaling": {
+    "temperature": 4.069193139210192,
+    "formula": "sigmoid(image_logit / temperature)"
+  },
+  "platt_scaling": {
+    "slope": 0.29141657172422586,
+    "intercept": -0.7096590060187311,
+    "formula": "sigmoid(slope * image_logit + intercept)"
+  },
+  "calibration_manifest_sha256": "249bc344b2e6a286c6d0968b292c36b479a1325e83752fcc2d0493bbfe41cce5",
+  "calibration_image_logits_sha256": "6817e96e13c9fbeb4bf42dad713364a13aa1a6508ed4d450ce114e838f6e9ffb",
+  "calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "calibration_diagnostics_sha256": "2bae4129bf0bca547baa9699cb1b08dff81991c2ad71a9932ac696b6c779a077",
+  "calibration_predictions_sha256": "9559be28cead1b4b3f2f0f0407b24599fd7c38e02a4e5395c2dfc2443b7dfa6c",
+  "optimization_objective": "image_level_binary_nll",
+  "calibration_results_are_in_sample": true,
+  "independent_test_evaluation_completed": false,
+  "cnn_weights_updated": false,
+  "test_data_used_for_fitting": false,
+  "external_data_used_for_fitting": false,
+  "calibrator_selection_using_test": false
+}

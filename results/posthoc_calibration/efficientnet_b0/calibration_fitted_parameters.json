@@ -1,0 +1,40 @@
+{
+  "stage": 7,
+  "architecture": "efficientnet_b0",
+  "final_checkpoint_epoch": 5,
+  "final_checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "fitting_cohort": "Calibration",
+  "magnification": "40x",
+  "patients": 16,
+  "images": 382,
+  "benign_images": 121,
+  "malignant_images": 261,
+  "unit_of_calibration": "source_image",
+  "sample_weighting": "equal_weight_per_image",
+  "primary_aggregation": "mean_patch_logit",
+  "calibration_manifest_sha256": "249bc344b2e6a286c6d0968b292c36b479a1325e83752fcc2d0493bbfe41cce5",
+  "input_image_logits_sha256": "6817e96e13c9fbeb4bf42dad713364a13aa1a6508ed4d450ce114e838f6e9ffb",
+  "temperature_scaling": {
+    "formula": "sigmoid(image_logit / temperature)",
+    "temperature": 4.069193139210192,
+    "optimization": "bounded_minimize_scalar_log_temperature",
+    "temperature_lower_bound": 0.05,
+    "temperature_upper_bound": 100.0,
+    "objective": "mean_image_binary_nll",
+    "optimizer_success": true
+  },
+  "platt_scaling": {
+    "formula": "sigmoid(slope * image_logit + intercept)",
+    "slope": 0.29141657172422586,
+    "intercept": -0.7096590060187311,
+    "regularization": "none",
+    "optimization": "L-BFGS-B",
+    "objective": "mean_image_binary_nll",
+    "optimizer_success": true
+  },
+  "ece10_definition": "10 equal-width positive-class probability bins",
+  "diagnostics_are_in_sample": true,
+  "cnn_weights_updated": false,
+  "test_data_used": false,
+  "external_data_used": false
+}
