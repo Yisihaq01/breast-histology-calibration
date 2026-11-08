@@ -1,0 +1,54 @@
+{
+  "project": "CIS631_histopathology_calibration",
+  "stage": "10_BRACS_preparation",
+  "checkpoint_version": 1,
+  "status": "provisional_metadata_verified",
+  "source": "BRACS_RoI/latest_version",
+  "source_workbook": "BRACS_original.xlsx",
+  "total_roi_images": 4539,
+  "total_roi_slides": 387,
+  "total_roi_patients": 151,
+  "original_partition_counts": {
+    "train": 3657,
+    "val": 312,
+    "test": 570
+  },
+  "unresolved_provenance_images": 4,
+  "provisional_primary_binary_eligible": 3272,
+  "separate_atypia_images": 1263,
+  "discrepant_slides": [
+    "BRACS_1667",
+    "BRACS_1771"
+  ],
+  "patient_provenance_resolution": "pending",
+  "full_png_decode_audit": "pending",
+  "pixel_hash_duplicate_audit": "pending",
+  "physical_scale_verification": "pending",
+  "patch_manifest_generation": "pending",
+  "raw_images_location": "Mac local Downloads",
+  "raw_images_in_checkpoint": false,
+  "model_training_performed": false,
+  "external_model_inference_performed": false,
+  "source_files": [
+    {
+      "filename": "BRACS_original.xlsx",
+      "bytes": 117907,
+      "sha256": "657799247662296fd021e3615428e392e04c04c0b9d399f6c9378f74fd2436b9"
+    },
+    {
+      "filename": "bracs_roi_file_inventory.csv",
+      "bytes": 413488,
+      "sha256": "cbf2760bda97baa608abaa0960691c5ff8e3a4e429b74a9ce21c0ff6e4f81f98"
+    },
+    {
+      "filename": "bracs_roi_count_discrepancies.csv",
+      "bytes": 194,
+      "sha256": "437faf273243491563c099e232d288b13eea59a2c38ce750a592e0846e046998"
+    },
+    {
+      "filename": "bracs_roi_metadata_provisional.csv",
+      "bytes": 842342,
+      "sha256": "d21ef1dd169fe812e25f3d4d0be7f6fe76d82553e7fef252ffca7296b0e689ef"
+    }
+  ]
+}
