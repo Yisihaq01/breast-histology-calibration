@@ -1,0 +1,39 @@
+{
+  "stage": 8,
+  "status": "reliability_diagrams_completed",
+  "model": "efficientnet_b0",
+  "test_patients": 16,
+  "test_images": 1863,
+  "magnifications": [
+    40,
+    100,
+    200,
+    400
+  ],
+  "methods": [
+    "Uncalibrated",
+    "Temperature scaling",
+    "Platt scaling"
+  ],
+  "positive_class": "Malignant",
+  "calibration_bins": 10,
+  "binning": "equal_width",
+  "bin_probability": "malignant",
+  "final_bin_includes_one": true,
+  "empty_bins_excluded_from_plot": true,
+  "all_bins_retained_in_csv": true,
+  "ece_reproduced_from_bins": true,
+  "unit_of_evaluation": "source_image",
+  "images_clustered_within_patients": true,
+  "plots_are_descriptive": true,
+  "confidence_intervals_plotted": false,
+  "checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "test_predictions_sha256": "97d3e320e926bc3d270fbecc5e512d32b835d3fec587ac229161d0d85a6743dd",
+  "reliability_bins_sha256": "459fe6c1fc8d3a4127555996caa1dfd9a690ee97e6439a889564b193a16c8005",
+  "reliability_summary_sha256": "2208e778d14696888678080ebb252c43c8f25580b203df0214ffa1ccb4c06034",
+  "figure_sha256": "8208e60f15a5a0e960b46e101d9cf3f35a93404ebebd7203ba944e9034650629",
+  "cnn_retrained": false,
+  "calibrators_refitted": false,
+  "test_based_method_selection": false
+}

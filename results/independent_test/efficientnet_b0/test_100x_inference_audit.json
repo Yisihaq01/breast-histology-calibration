@@ -1,0 +1,21 @@
+{
+  "stage": 8,
+  "magnification": 100,
+  "images": 501,
+  "patches": 7970,
+  "patients": 16,
+  "checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "input_manifest_sha256": "4f69bb758e796d610916657ee45934c7f71d695bb8df9ead648d83f1a7386662",
+  "calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "patch_predictions_sha256": "baf52c0fcae1357b9703ab7009b25d684d0ccfb783600432d682f1a7ae7b14ce",
+  "image_predictions_sha256": "9b2a8d1ca3b66555ecac1b8491833d69e66a1913915d55536233bd9e8327a013",
+  "aggregation": "mean_patch_logit",
+  "preprocessing": "locked_fixed_geometry_magnification_shift",
+  "temperature": 4.069193139210192,
+  "platt_slope": 0.29141657172422586,
+  "platt_intercept": -0.7096590060187311,
+  "cnn_weights_updated": false,
+  "calibration_refitted": false,
+  "test_labels_used_for_fitting": false,
+  "test_metrics_calculated": false
+}

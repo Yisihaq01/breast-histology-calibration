@@ -1,0 +1,43 @@
+{
+  "stage": 8,
+  "status": "test_preprocessing_locked",
+  "test_patients": 16,
+  "test_images": 1863,
+  "test_patches": 29671,
+  "test_magnifications": [
+    40,
+    100,
+    200,
+    400
+  ],
+  "preprocessing_policy": "fixed_40x_development_input_operator_all_magnifications",
+  "resize_ratio_all_magnifications": 0.98,
+  "physical_resolution_normalized_across_magnifications": false,
+  "source_mpp_reported_um_per_pixel": {
+    "40": 0.49,
+    "100": 0.2,
+    "200": 0.1,
+    "400": 0.05
+  },
+  "physical_resolution_reference_doi": "10.1049/cvi2.12021",
+  "patch_size": 224,
+  "grid_size": 4,
+  "max_patches": 16,
+  "min_tissue_fraction": 0.2,
+  "od_threshold": 0.08,
+  "saturation_threshold": 0.05,
+  "source_preprocessing_sha256": "0e9e0a5337aafc82d7449e6ff776734d9e4147dbe9f9efa7bf58d67b035eaefc",
+  "final_cnn_checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "locked_calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "combined_test_manifest_sha256": "a29800391cd3554fd4c2bf9c826e22b47dff7556fe03b3301f9b2d5102aa96c2",
+  "per_magnification_manifest_sha256": {
+    "40": "0a96202b654d6472e6b96b3e7b735354e2bf84cffdc7e0414e4b4d0718d733bc",
+    "100": "4f69bb758e796d610916657ee45934c7f71d695bb8df9ead648d83f1a7386662",
+    "200": "7d28b874d4080ac5236f8704adfc128ba0c979cd056dc3cca46d929af136f48a",
+    "400": "dc55f5d5a5aecb7e13dcfa3e2bcf4e747c747682782843d659f9de0db912a9eb"
+  },
+  "cnn_inference_performed": false,
+  "test_predictions_inspected": false,
+  "test_labels_used_for_fitting": false,
+  "calibration_parameters_changed": false
+}

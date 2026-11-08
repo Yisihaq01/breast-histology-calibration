@@ -1,0 +1,39 @@
+{
+  "stage": 8,
+  "status": "independent_test_point_estimates_completed",
+  "test_patients": 16,
+  "test_images": 1863,
+  "magnifications": [
+    40,
+    100,
+    200,
+    400
+  ],
+  "methods": [
+    "Uncalibrated",
+    "Temperature scaling",
+    "Platt scaling"
+  ],
+  "positive_class": "Malignant",
+  "unit_of_evaluation": "source_image",
+  "primary_clean_test": "40x",
+  "shift_evaluations": [
+    "100x",
+    "200x",
+    "400x"
+  ],
+  "aggregation": "mean_patch_logit",
+  "auprc_summary": "sklearn_average_precision",
+  "ece_definition": "10_equal_width_bins_positive_class_probability",
+  "classification_threshold": 0.5,
+  "nll_computation": "numerically_stable_binary_logit_nll",
+  "checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "test_predictions_sha256": "97d3e320e926bc3d270fbecc5e512d32b835d3fec587ac229161d0d85a6743dd",
+  "test_metrics_sha256": "ceba30239360051143c931a4d4512db4ca793bf2f73f77d45d659e2f152e6936",
+  "test_metrics_are_independent_point_estimates": true,
+  "confidence_intervals_calculated": false,
+  "cnn_retrained": false,
+  "calibrators_refitted": false,
+  "test_based_method_selection": false
+}

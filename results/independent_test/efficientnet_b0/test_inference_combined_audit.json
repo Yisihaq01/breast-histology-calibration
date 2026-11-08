@@ -1,0 +1,46 @@
+{
+  "stage": 8,
+  "status": "independent_test_inference_completed",
+  "architecture": "efficientnet_b0",
+  "final_checkpoint_epoch": 5,
+  "checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "test_patients": 16,
+  "test_images": 1863,
+  "test_patches": 29671,
+  "magnifications": [
+    40,
+    100,
+    200,
+    400
+  ],
+  "batch_size": 32,
+  "aggregation": "mean_patch_logit",
+  "inference_preprocessing": "fixed_40x_development_operator",
+  "calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "test_manifest_sha256": "a29800391cd3554fd4c2bf9c826e22b47dff7556fe03b3301f9b2d5102aa96c2",
+  "combined_predictions_sha256": "97d3e320e926bc3d270fbecc5e512d32b835d3fec587ac229161d0d85a6743dd",
+  "individual_prediction_hashes": {
+    "40": {
+      "patch_csv_sha256": "f007ba869e89d8a47a8b601a6a50a50a200351056cf3614cf7ef9efcb514ce0b",
+      "image_csv_sha256": "bfb9ee9f7459af4ad72b1930c136f57842842fdf31e43b73c44ae9ab2bba57d9"
+    },
+    "100": {
+      "patch_csv_sha256": "baf52c0fcae1357b9703ab7009b25d684d0ccfb783600432d682f1a7ae7b14ce",
+      "image_csv_sha256": "9b2a8d1ca3b66555ecac1b8491833d69e66a1913915d55536233bd9e8327a013"
+    },
+    "200": {
+      "patch_csv_sha256": "5faf64d213527fc82b4d1faac989cf62eef8d7dfdf194596e178641d73ab4191",
+      "image_csv_sha256": "3a6ae7f0aa689ee7ff158b4ba7869dc54bfb59b7b087c03f4a0752b6e400814e"
+    },
+    "400": {
+      "patch_csv_sha256": "aae54c2cd4cf31005f6fb6ac5cd1ba9ac31ca5b472dcb2961af6c3296881be36",
+      "image_csv_sha256": "660eb152427c615c0b2c05e9664d36440227877a86716c5bd19c780841e10460"
+    }
+  },
+  "model_state_unchanged": true,
+  "calibration_parameters_unchanged": true,
+  "test_labels_used_for_fitting": false,
+  "cnn_retrained": false,
+  "calibrators_refitted": false,
+  "test_metrics_calculated": false
+}
