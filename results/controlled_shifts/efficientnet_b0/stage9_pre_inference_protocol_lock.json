@@ -1,0 +1,55 @@
+{
+  "stage": 9,
+  "status": "pre_inference_protocol_locked",
+  "test_magnification": 40,
+  "test_patients": 16,
+  "test_images": 446,
+  "patches_per_condition": 7087,
+  "conditions": {
+    "clean": {
+      "severity": "none"
+    },
+    "stain_like_od": {
+      "low": 0.05,
+      "medium": 0.1,
+      "high": 0.2
+    },
+    "gaussian_blur": {
+      "low": 0.5,
+      "medium": 1.0,
+      "high": 2.0
+    },
+    "gaussian_noise": {
+      "low": 0.02,
+      "medium": 0.05,
+      "high": 0.1
+    }
+  },
+  "n_conditions": 10,
+  "perturbation_unit": "original_tissue_selected_patch",
+  "perturbation_stage": "after_original_patch_extraction_before_normalization",
+  "original_patch_coordinates_preserved": true,
+  "original_tissue_selection_preserved": true,
+  "color_shift_method": "controlled_rgb_optical_density_channel_scaling",
+  "color_shift_is_validated_he_stain_transform": false,
+  "blur_method": "gaussian_blur",
+  "noise_method": "additive_rgb_gaussian_noise",
+  "noise_sigma_units": "rgb_fraction_0_to_1",
+  "noise_seed": 631,
+  "aggregation": "mean_patch_logit",
+  "calibration_methods": [
+    "uncalibrated",
+    "temperature_scaling",
+    "platt_scaling"
+  ],
+  "bootstrap_resamples": 1000,
+  "bootstrap_sampling_unit": "patient_id",
+  "analysis_type": "secondary_exploratory_test_sensitivity",
+  "model_checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "clean_test_manifest_sha256": "0a96202b654d6472e6b96b3e7b735354e2bf84cffdc7e0414e4b4d0718d733bc",
+  "clean_test_predictions_sha256": "bfb9ee9f7459af4ad72b1930c136f57842842fdf31e43b73c44ae9ab2bba57d9",
+  "cnn_retraining_allowed": false,
+  "calibrator_refitting_allowed": false,
+  "test_based_severity_tuning_allowed": false
+}

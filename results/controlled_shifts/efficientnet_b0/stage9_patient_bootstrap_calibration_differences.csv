@@ -1,0 +1,181 @@
+condition,method,comparison_method,metric,observed_difference,ci_lower_95,ci_upper_95
+clean,Temperature scaling,Uncalibrated,auroc,0,0,0
+clean,Temperature scaling,Uncalibrated,average_precision,0,0,0
+clean,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+clean,Temperature scaling,Uncalibrated,ece10,-0.047545439892717895,-0.09633486211346054,0.050132167252883691
+clean,Temperature scaling,Uncalibrated,brier,-0.029068976723503392,-0.072817307862818315,0.011408908472420964
+clean,Temperature scaling,Uncalibrated,nll,-1.0950502174298529,-2.1612721573167084,-0.17914490674665587
+clean,Platt scaling,Uncalibrated,auroc,0,0,0
+clean,Platt scaling,Uncalibrated,average_precision,0,0,0
+clean,Platt scaling,Uncalibrated,balanced_accuracy,0.017680548234053628,-0.016504686687421721,0.046712670146006434
+clean,Platt scaling,Uncalibrated,ece10,-0.090277142584516995,-0.13665273195258187,0.063041052513577528
+clean,Platt scaling,Uncalibrated,brier,-0.04077084185196081,-0.098235547464141107,0.014922322774191091
+clean,Platt scaling,Uncalibrated,nll,-1.1343770527519403,-2.1942746686574304,-0.21925153555624272
+clean,Platt scaling,Temperature scaling,auroc,0,0,0
+clean,Platt scaling,Temperature scaling,average_precision,0,0,0
+clean,Platt scaling,Temperature scaling,balanced_accuracy,0.017680548234053628,-0.016504686687421721,0.046712670146006434
+clean,Platt scaling,Temperature scaling,ece10,-0.042731702691799101,-0.058797277090979289,0.017853096661825416
+clean,Platt scaling,Temperature scaling,brier,-0.011701865128457417,-0.028085301353109285,0.0052960037930776215
+clean,Platt scaling,Temperature scaling,nll,-0.039326835322087583,-0.084316238554467668,0.0060353519209457324
+stain_like_od_low,Temperature scaling,Uncalibrated,auroc,0,0,0
+stain_like_od_low,Temperature scaling,Uncalibrated,average_precision,0,0,0
+stain_like_od_low,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+stain_like_od_low,Temperature scaling,Uncalibrated,ece10,-0.042953441467193293,-0.089418860789140533,0.057333829163648251
+stain_like_od_low,Temperature scaling,Uncalibrated,brier,-0.026450211162274612,-0.069552571816630743,0.012765182888879432
+stain_like_od_low,Temperature scaling,Uncalibrated,nll,-1.1661178996892683,-2.2330378266535251,-0.22522935631018101
+stain_like_od_low,Platt scaling,Uncalibrated,auroc,0,0,0
+stain_like_od_low,Platt scaling,Uncalibrated,average_precision,0,0,0
+stain_like_od_low,Platt scaling,Uncalibrated,balanced_accuracy,0.0062519768054825064,-0.024725418529985048,0.031431745847390807
+stain_like_od_low,Platt scaling,Uncalibrated,ece10,-0.08433801689149209,-0.1297381895011841,0.060884146906662377
+stain_like_od_low,Platt scaling,Uncalibrated,brier,-0.037479956555422911,-0.093816849869606797,0.01576453912985212
+stain_like_od_low,Platt scaling,Uncalibrated,nll,-1.2050115620296817,-2.2555709544115423,-0.25152543685354201
+stain_like_od_low,Platt scaling,Temperature scaling,auroc,0,0,0
+stain_like_od_low,Platt scaling,Temperature scaling,average_precision,0,0,0
+stain_like_od_low,Platt scaling,Temperature scaling,balanced_accuracy,0.0062519768054825064,-0.024725418529985048,0.031431745847390807
+stain_like_od_low,Platt scaling,Temperature scaling,ece10,-0.041384575424298797,-0.055998033753363076,0.012841985071852653
+stain_like_od_low,Platt scaling,Temperature scaling,brier,-0.011029745393148299,-0.02703123962451915,0.005296575074565435
+stain_like_od_low,Platt scaling,Temperature scaling,nll,-0.038893662340413471,-0.08382468400781512,0.0074357854951940822
+stain_like_od_medium,Temperature scaling,Uncalibrated,auroc,0,0,0
+stain_like_od_medium,Temperature scaling,Uncalibrated,average_precision,0,0,0
+stain_like_od_medium,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+stain_like_od_medium,Temperature scaling,Uncalibrated,ece10,-0.03625252384458591,-0.089030204728207399,0.056331419355219396
+stain_like_od_medium,Temperature scaling,Uncalibrated,brier,-0.023247698267997718,-0.063979701017996424,0.012129522966587205
+stain_like_od_medium,Temperature scaling,Uncalibrated,nll,-1.2652871555420389,-2.3423899258458651,-0.26716997893748845
+stain_like_od_medium,Platt scaling,Uncalibrated,auroc,0,0,0
+stain_like_od_medium,Platt scaling,Uncalibrated,average_precision,0,0,0
+stain_like_od_medium,Platt scaling,Uncalibrated,balanced_accuracy,0.0052398523985237588,-0.02871634493645121,0.035487090425363098
+stain_like_od_medium,Platt scaling,Uncalibrated,ece10,-0.074369424151368005,-0.12164379248043591,0.057300485295853215
+stain_like_od_medium,Platt scaling,Uncalibrated,brier,-0.033535342765325521,-0.088299819002686505,0.014343046765884639
+stain_like_od_medium,Platt scaling,Uncalibrated,nll,-1.3031953024680818,-2.3691663631651525,-0.29924087807872429
+stain_like_od_medium,Platt scaling,Temperature scaling,auroc,0,0,0
+stain_like_od_medium,Platt scaling,Temperature scaling,average_precision,0,0,0
+stain_like_od_medium,Platt scaling,Temperature scaling,balanced_accuracy,0.0052398523985237588,-0.02871634493645121,0.035487090425363098
+stain_like_od_medium,Platt scaling,Temperature scaling,ece10,-0.038116900306782095,-0.052376038330508697,0.01730401315445259
+stain_like_od_medium,Platt scaling,Temperature scaling,brier,-0.010287644497327803,-0.025127070412591185,0.0051630090776281024
+stain_like_od_medium,Platt scaling,Temperature scaling,nll,-0.037908146926043051,-0.082097613481334292,0.0081307490535691349
+stain_like_od_high,Temperature scaling,Uncalibrated,auroc,0,0,0
+stain_like_od_high,Temperature scaling,Uncalibrated,average_precision,0,0,0
+stain_like_od_high,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+stain_like_od_high,Temperature scaling,Uncalibrated,ece10,-0.021940021613773592,-0.066749283152770872,0.049546511426567741
+stain_like_od_high,Temperature scaling,Uncalibrated,brier,-0.015517816915341015,-0.05180768529394255,0.012880215370345328
+stain_like_od_high,Temperature scaling,Uncalibrated,nll,-1.5013126384722555,-2.6424677125718992,-0.37452912554060513
+stain_like_od_high,Platt scaling,Uncalibrated,auroc,0,0,0
+stain_like_od_high,Platt scaling,Uncalibrated,average_precision,0,0,0
+stain_like_od_high,Platt scaling,Uncalibrated,balanced_accuracy,-0.0061887190300475847,-0.041787297161294139,0.014354066985645897
+stain_like_od_high,Platt scaling,Uncalibrated,ece10,-0.057805986783787594,-0.09358162843117114,0.048754284594414617
+stain_like_od_high,Platt scaling,Uncalibrated,brier,-0.024980197200335896,-0.069473230214904425,0.013397948469888574
+stain_like_od_high,Platt scaling,Uncalibrated,nll,-1.5362315733863199,-2.6809672268617795,-0.40276751235125979
+stain_like_od_high,Platt scaling,Temperature scaling,auroc,0,0,0
+stain_like_od_high,Platt scaling,Temperature scaling,average_precision,0,0,0
+stain_like_od_high,Platt scaling,Temperature scaling,balanced_accuracy,-0.0061887190300475847,-0.041787297161294139,0.014354066985645897
+stain_like_od_high,Platt scaling,Temperature scaling,ece10,-0.035865965170014003,-0.047470962243386094,0.0051346415882507473
+stain_like_od_high,Platt scaling,Temperature scaling,brier,-0.0094623802849948813,-0.022419388429462807,0.0044723574003704709
+stain_like_od_high,Platt scaling,Temperature scaling,nll,-0.034918934914064503,-0.075421130694492591,0.0094867803370211612
+gaussian_blur_low,Temperature scaling,Uncalibrated,auroc,0,0,0
+gaussian_blur_low,Temperature scaling,Uncalibrated,average_precision,0,0,0
+gaussian_blur_low,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+gaussian_blur_low,Temperature scaling,Uncalibrated,ece10,-0.032984106071163505,-0.077862068988840988,0.033243369579537996
+gaussian_blur_low,Temperature scaling,Uncalibrated,brier,-0.028116059165952723,-0.065990699173534145,0.0047981385097963427
+gaussian_blur_low,Temperature scaling,Uncalibrated,nll,-1.3408501879427905,-2.4867413752345233,-0.30396721719093017
+gaussian_blur_low,Platt scaling,Uncalibrated,auroc,0,0,0
+gaussian_blur_low,Platt scaling,Uncalibrated,average_precision,0,0,0
+gaussian_blur_low,Platt scaling,Uncalibrated,balanced_accuracy,0.023036373220874928,-0.0026145560176382308,0.067157622965099015
+gaussian_blur_low,Platt scaling,Uncalibrated,ece10,-0.075644382402211205,-0.11239322274834966,0.032083731134014012
+gaussian_blur_low,Platt scaling,Uncalibrated,brier,-0.042235083023965198,-0.089878562157421404,0.00088248696909171533
+gaussian_blur_low,Platt scaling,Uncalibrated,nll,-1.3853964610874505,-2.5065906663281914,-0.3388228583569301
+gaussian_blur_low,Platt scaling,Temperature scaling,auroc,0,0,0
+gaussian_blur_low,Platt scaling,Temperature scaling,average_precision,0,0,0
+gaussian_blur_low,Platt scaling,Temperature scaling,balanced_accuracy,0.023036373220874928,-0.0026145560176382308,0.067157622965099015
+gaussian_blur_low,Platt scaling,Temperature scaling,ece10,-0.0426602763310477,-0.051849955423683043,0.0015927722139240288
+gaussian_blur_low,Platt scaling,Temperature scaling,brier,-0.014119023858012475,-0.027468562501930912,0.00045252723300439799
+gaussian_blur_low,Platt scaling,Temperature scaling,nll,-0.044546273144660087,-0.084287673467892413,0.00084579105791899667
+gaussian_blur_medium,Temperature scaling,Uncalibrated,auroc,0,0,0
+gaussian_blur_medium,Temperature scaling,Uncalibrated,average_precision,0,0,0
+gaussian_blur_medium,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+gaussian_blur_medium,Temperature scaling,Uncalibrated,ece10,-0.038127572261359099,-0.08037267166573285,0.036395634884776873
+gaussian_blur_medium,Temperature scaling,Uncalibrated,brier,-0.028247549327854421,-0.062380331628995311,0.0045877721341341157
+gaussian_blur_medium,Temperature scaling,Uncalibrated,nll,-1.2548386109288221,-2.3341283855415882,-0.27711114923468544
+gaussian_blur_medium,Platt scaling,Uncalibrated,auroc,0,0,0
+gaussian_blur_medium,Platt scaling,Uncalibrated,average_precision,0,0,0
+gaussian_blur_medium,Platt scaling,Uncalibrated,balanced_accuracy,0.031607801792303603,0.0020517627671707318,0.069561837127805268
+gaussian_blur_medium,Platt scaling,Uncalibrated,ece10,-0.077634838553639396,-0.12247167523208949,0.031492279384147205
+gaussian_blur_medium,Platt scaling,Uncalibrated,brier,-0.042916831559729501,-0.088403313095999414,-7.0225861905675547e-05
+gaussian_blur_medium,Platt scaling,Uncalibrated,nll,-1.3013079276184334,-2.3680800266907753,-0.30903816101197445
+gaussian_blur_medium,Platt scaling,Temperature scaling,auroc,0,0,0
+gaussian_blur_medium,Platt scaling,Temperature scaling,average_precision,0,0,0
+gaussian_blur_medium,Platt scaling,Temperature scaling,balanced_accuracy,0.031607801792303603,0.0020517627671707318,0.069561837127805268
+gaussian_blur_medium,Platt scaling,Temperature scaling,ece10,-0.039507266292280296,-0.052972812786134249,0.0015454924097555796
+gaussian_blur_medium,Platt scaling,Temperature scaling,brier,-0.01466928223187508,-0.027928813004871298,-3.752927097318409e-05
+gaussian_blur_medium,Platt scaling,Temperature scaling,nll,-0.046469316689611406,-0.085981439582099861,-0.0046673421518333381
+gaussian_blur_high,Temperature scaling,Uncalibrated,auroc,0,0,0
+gaussian_blur_high,Temperature scaling,Uncalibrated,average_precision,0,0,0
+gaussian_blur_high,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+gaussian_blur_high,Temperature scaling,Uncalibrated,ece10,-0.074798512073035991,-0.11919455062798126,0.074403701394936711
+gaussian_blur_high,Temperature scaling,Uncalibrated,brier,-0.019148264163812684,-0.060902727941973531,0.020890737488498144
+gaussian_blur_high,Temperature scaling,Uncalibrated,nll,-0.63827917288577685,-1.3750778388627829,-0.025473296297607848
+gaussian_blur_high,Platt scaling,Uncalibrated,auroc,0,0,0
+gaussian_blur_high,Platt scaling,Uncalibrated,average_precision,0,0,0
+gaussian_blur_high,Platt scaling,Uncalibrated,balanced_accuracy,-0.00076963626779102956,-0.038015126517965472,0.030671191553544495
+gaussian_blur_high,Platt scaling,Uncalibrated,ece10,-0.055043748047589797,-0.14869437000438357,0.096189817981497144
+gaussian_blur_high,Platt scaling,Uncalibrated,brier,-0.022319968167165194,-0.082121474808036735,0.035099622249789825
+gaussian_blur_high,Platt scaling,Uncalibrated,nll,-0.65972817666144179,-1.4039018855424565,-0.026314588199587517
+gaussian_blur_high,Platt scaling,Temperature scaling,auroc,0,0,0
+gaussian_blur_high,Platt scaling,Temperature scaling,average_precision,0,0,0
+gaussian_blur_high,Platt scaling,Temperature scaling,balanced_accuracy,-0.00076963626779102956,-0.038015126517965472,0.030671191553544495
+gaussian_blur_high,Platt scaling,Temperature scaling,ece10,0.019754764025446195,-0.057724483933571338,0.063945453424748555
+gaussian_blur_high,Platt scaling,Temperature scaling,brier,-0.0031717040033525101,-0.025323494952859009,0.01846730597371125
+gaussian_blur_high,Platt scaling,Temperature scaling,nll,-0.021449003775664888,-0.071248576651405202,0.025990101257638204
+gaussian_noise_low,Temperature scaling,Uncalibrated,auroc,0,0,0
+gaussian_noise_low,Temperature scaling,Uncalibrated,average_precision,0,0,0
+gaussian_noise_low,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+gaussian_noise_low,Temperature scaling,Uncalibrated,ece10,-0.06027855097216761,-0.11158629484204351,0.085019634432793492
+gaussian_noise_low,Temperature scaling,Uncalibrated,brier,-0.025738493989207994,-0.072378666418821194,0.018679131555821831
+gaussian_noise_low,Temperature scaling,Uncalibrated,nll,-0.74024502389487612,-1.6386090231105637,-0.040680666635000508
+gaussian_noise_low,Platt scaling,Uncalibrated,auroc,0,0,0
+gaussian_noise_low,Platt scaling,Uncalibrated,average_precision,0,0,0
+gaussian_noise_low,Platt scaling,Uncalibrated,balanced_accuracy,0.039704797047970586,-0.0019974749107329261,0.073833929116322722
+gaussian_noise_low,Platt scaling,Uncalibrated,ece10,-0.097194833992682805,-0.16771406296403252,0.074366716720154324
+gaussian_noise_low,Platt scaling,Uncalibrated,brier,-0.037039302201152591,-0.10134619861949636,0.024086904154642177
+gaussian_noise_low,Platt scaling,Uncalibrated,nll,-0.77823575244730425,-1.681079952299154,-0.065571454649664906
+gaussian_noise_low,Platt scaling,Temperature scaling,auroc,0,0,0
+gaussian_noise_low,Platt scaling,Temperature scaling,average_precision,0,0,0
+gaussian_noise_low,Platt scaling,Temperature scaling,balanced_accuracy,0.039704797047970586,-0.0019974749107329261,0.073833929116322722
+gaussian_noise_low,Platt scaling,Temperature scaling,ece10,-0.036916283020515195,-0.076177296095338493,0.017259015257877514
+gaussian_noise_low,Platt scaling,Temperature scaling,brier,-0.011300808211944596,-0.032135360174278711,0.0080673066035355408
+gaussian_noise_low,Platt scaling,Temperature scaling,nll,-0.037990728552428021,-0.087110069960227646,0.0072644024279226432
+gaussian_noise_medium,Temperature scaling,Uncalibrated,auroc,0,0,0
+gaussian_noise_medium,Temperature scaling,Uncalibrated,average_precision,0,0,0
+gaussian_noise_medium,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+gaussian_noise_medium,Temperature scaling,Uncalibrated,ece10,-0.040855619196558904,-0.097348170321263292,0.10014269495449624
+gaussian_noise_medium,Temperature scaling,Uncalibrated,brier,-0.011127813473123888,-0.046212038389797983,0.022549804588966486
+gaussian_noise_medium,Temperature scaling,Uncalibrated,nll,-0.41164507998255734,-1.1292406744742456,0.061129667650622929
+gaussian_noise_medium,Platt scaling,Uncalibrated,auroc,0,0,0
+gaussian_noise_medium,Platt scaling,Uncalibrated,average_precision,0,0,0
+gaussian_noise_medium,Platt scaling,Uncalibrated,balanced_accuracy,0.077026884554559971,0.0047207163695829916,0.12815449331948739
+gaussian_noise_medium,Platt scaling,Uncalibrated,ece10,-0.034897934484294096,-0.12404231481799614,0.09963408286412434
+gaussian_noise_medium,Platt scaling,Uncalibrated,brier,-0.024924736188635305,-0.079613213860903073,0.02908972531973416
+gaussian_noise_medium,Platt scaling,Uncalibrated,nll,-0.45070122268583812,-1.1678102397213672,0.052216990558527097
+gaussian_noise_medium,Platt scaling,Temperature scaling,auroc,0,0,0
+gaussian_noise_medium,Platt scaling,Temperature scaling,average_precision,0,0,0
+gaussian_noise_medium,Platt scaling,Temperature scaling,balanced_accuracy,0.077026884554559971,0.0047207163695829916,0.12815449331948739
+gaussian_noise_medium,Platt scaling,Temperature scaling,ece10,0.0059576847122648074,-0.060358095826730108,0.039329397619650534
+gaussian_noise_medium,Platt scaling,Temperature scaling,brier,-0.013796922715511417,-0.038554116478805946,0.010048964342569735
+gaussian_noise_medium,Platt scaling,Temperature scaling,nll,-0.039056142703280783,-0.090252928176445965,0.010473822782417434
+gaussian_noise_high,Temperature scaling,Uncalibrated,auroc,0,0,0
+gaussian_noise_high,Temperature scaling,Uncalibrated,average_precision,0,0,0
+gaussian_noise_high,Temperature scaling,Uncalibrated,balanced_accuracy,0,0,0
+gaussian_noise_high,Temperature scaling,Uncalibrated,ece10,-0.083340284787845109,-0.11235696242589632,-0.0013960890689354414
+gaussian_noise_high,Temperature scaling,Uncalibrated,brier,-0.055615021393924408,-0.096187074772657102,-0.0071301715660064347
+gaussian_noise_high,Temperature scaling,Uncalibrated,nll,-0.9058070261103045,-1.554825950104938,-0.29935128968816116
+gaussian_noise_high,Platt scaling,Uncalibrated,auroc,0,0,0
+gaussian_noise_high,Platt scaling,Uncalibrated,average_precision,0,0,0
+gaussian_noise_high,Platt scaling,Uncalibrated,balanced_accuracy,0.10101212440695839,0.054827802749867767,0.14096423796791446
+gaussian_noise_high,Platt scaling,Uncalibrated,ece10,-0.14883848620328111,-0.17429319820135497,-0.049032488368460664
+gaussian_noise_high,Platt scaling,Uncalibrated,brier,-0.093538338631238505,-0.14823174779192347,-0.034472619549314749
+gaussian_noise_high,Platt scaling,Uncalibrated,nll,-0.99491476387290234,-1.6310158222763775,-0.37599214615323329
+gaussian_noise_high,Platt scaling,Temperature scaling,auroc,0,0,0
+gaussian_noise_high,Platt scaling,Temperature scaling,average_precision,0,0,0
+gaussian_noise_high,Platt scaling,Temperature scaling,balanced_accuracy,0.10101212440695839,0.054827802749867767,0.14096423796791446
+gaussian_noise_high,Platt scaling,Temperature scaling,ece10,-0.065498201415435997,-0.07669873171620134,-0.03274882036739777
+gaussian_noise_high,Platt scaling,Temperature scaling,brier,-0.037923317237314097,-0.055550736683540734,-0.019617277303424357
+gaussian_noise_high,Platt scaling,Temperature scaling,nll,-0.089107737762597783,-0.12847537880623133,-0.050631402361264122

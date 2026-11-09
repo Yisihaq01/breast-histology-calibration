@@ -1,0 +1,77 @@
+{
+  "stage": 9,
+  "status": "all_shifted_inference_completed",
+  "model": "efficientnet_b0",
+  "final_checkpoint_epoch": 5,
+  "checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "protocol_sha256": "6fe91318e47f0f00a3ff11df69166fd0b401ab15129e4ee1faf3ecddf10e14cd",
+  "implementation_audit_sha256": "085403bc3a499d47a572f70b06556ca0cf6c88d26f7fbecd0282ba81d219a23e",
+  "setup_audit_sha256": "cc444cf6ddea6de182f764901222a4942c8dd08df2346b02a814916ab8d21b89",
+  "calibration_parameters_sha256": "6c7d07950def91e78477333d9b8a804d832a572d90081c8633cd184d1584145d",
+  "clean_reference_sha256": "bfb9ee9f7459af4ad72b1930c136f57842842fdf31e43b73c44ae9ab2bba57d9",
+  "original_manifest_sha256": "0a96202b654d6472e6b96b3e7b735354e2bf84cffdc7e0414e4b4d0718d733bc",
+  "test_patients": 16,
+  "images_per_condition": 446,
+  "patches_per_condition": 7087,
+  "shifted_conditions": 9,
+  "total_shifted_image_predictions": 4014,
+  "total_shifted_patch_predictions": 63783,
+  "aggregation": "mean_patch_logit",
+  "original_patch_selection_preserved": true,
+  "same_test_images_across_conditions": true,
+  "same_test_patients_across_conditions": true,
+  "combined_predictions_sha256": "925065d1a6b2d0108c76317dd47ce5432b7c50ffaf4bd71128ce7c9dd727c514",
+  "condition_output_sha256": {
+    "stain_like_od_low": {
+      "patch_predictions": "b2fa7ffd9d7853d78ed9cf88c884627190c2917fca072481801cde762d4bae0d",
+      "image_predictions": "7b8bf981ef2372a2d6009fac746445f64df692096798eb522ee14f78eb8f59ba",
+      "inference_audit": "f9c00042a79492623048030591d5b6df7877784dd4c9cd3c449d52f5ea499896"
+    },
+    "stain_like_od_medium": {
+      "patch_predictions": "a7021896f372e37238cf716c8fae44bae7536da85504236ac7f83f3c9b690b8e",
+      "image_predictions": "be185fc20a40c795bac14f7d9d1946b2ac0860698c9b018e025876701c971d03",
+      "inference_audit": "987eef46e13d455682eacd820aa41cbef851723ebd047ee13ca633f010159123"
+    },
+    "stain_like_od_high": {
+      "patch_predictions": "e9af257bde64fa122cc73395b57904edc4d83211d36bc449cd31a8a74b37b5f6",
+      "image_predictions": "7dd61402b635e3f8023263c03dfe8d405a8803733c4ded0cf8ee9dda60286404",
+      "inference_audit": "52dd698369221c1e40fe0490269b2ae44874219a9db894be7f436cce5908177c"
+    },
+    "gaussian_blur_low": {
+      "patch_predictions": "b3a3980f997f7e7b89f41d33d38ec5efeea5d9cfb1a264e411a2853796f5d271",
+      "image_predictions": "1880532420a6ee9d4d8ce32131ec93b8602e8665ae4281794bad1c16ed07a238",
+      "inference_audit": "880485c99c18e93bb4ad8a4ade2a041f85ad24f19e6cc6df4a53d42503084df3"
+    },
+    "gaussian_blur_medium": {
+      "patch_predictions": "98541740645a9ba925cde7d176aea7534303d1d046e2567886bfe1b1d02a4c56",
+      "image_predictions": "cf3bfe3709e7f6c38ccefd26118412cc221f1cb0edd9de69d57793b2529ea051",
+      "inference_audit": "76092eb80150c8e6d92be601f045c91233c5eac62328e69f6ea52fae39965ed8"
+    },
+    "gaussian_blur_high": {
+      "patch_predictions": "00da0a2d11429a25c78c739e5a816b92a05c67a701c196be145f6099d667edc1",
+      "image_predictions": "8acffbabbd34d2e637e35f9c744a6b09baade91fc5009fedb2f75953113a8b1c",
+      "inference_audit": "7588b01fe80262d5752124ba6cfe3c13a3de0a83fa952dde4c9688eef4cbb7ea"
+    },
+    "gaussian_noise_low": {
+      "patch_predictions": "80fccca39a250f6501f18d6f1d031c9017ad60ac916f43878115fa60dd6d57fa",
+      "image_predictions": "525a7cf6ddadf19049e5e037048613290081df8214829a258c04913d7830857c",
+      "inference_audit": "9ff3468957e293e4bb4806448d4abd89c7701c3b1a324efd2ab147aacb78a874"
+    },
+    "gaussian_noise_medium": {
+      "patch_predictions": "01b6e2b25786d15b908b7ee216e74c09fab086800a86bb6d0b40b4620e199721",
+      "image_predictions": "9b9badc104cdad93d05e48c71550f861b2470f84081b2f06f3bc1fa34d22a7c0",
+      "inference_audit": "40152202a79501040aa37b6930127c4326b24686157e2a6aaeef615dcc324664"
+    },
+    "gaussian_noise_high": {
+      "patch_predictions": "6bd50ca5ba3b88bec82256c009f9677ee9b4efdbc4c3de6f40bb67333e2763fb",
+      "image_predictions": "144b80f1eebe4c38754ef6c9912dbe172d36248c589e0ce30f00568f484f8040",
+      "inference_audit": "11cc8554499db3925801db1b0af036301506cfd0a4d3010e60b61a8e29d18066"
+    }
+  },
+  "cnn_weights_unchanged": true,
+  "calibration_parameters_unchanged": true,
+  "cnn_retrained": false,
+  "calibrators_refitted": false,
+  "test_based_tuning": false,
+  "performance_metrics_calculated": false
+}

@@ -1,0 +1,96 @@
+{
+  "stage": 9,
+  "status": "shift_implementation_validated",
+  "protocol_sha256": "6fe91318e47f0f00a3ff11df69166fd0b401ab15129e4ee1faf3ecddf10e14cd",
+  "source_notebook_sha256": "0e9e0a5337aafc82d7449e6ff776734d9e4147dbe9f9efa7bf58d67b035eaefc",
+  "test_manifest_sha256": "0a96202b654d6472e6b96b3e7b735354e2bf84cffdc7e0414e4b4d0718d733bc",
+  "conditions": {
+    "clean": {
+      "family": "clean",
+      "severity": "none",
+      "strength": 0.0
+    },
+    "stain_like_od_low": {
+      "family": "stain_like_od",
+      "severity": "low",
+      "strength": 0.05
+    },
+    "stain_like_od_medium": {
+      "family": "stain_like_od",
+      "severity": "medium",
+      "strength": 0.1
+    },
+    "stain_like_od_high": {
+      "family": "stain_like_od",
+      "severity": "high",
+      "strength": 0.2
+    },
+    "gaussian_blur_low": {
+      "family": "gaussian_blur",
+      "severity": "low",
+      "strength": 0.5
+    },
+    "gaussian_blur_medium": {
+      "family": "gaussian_blur",
+      "severity": "medium",
+      "strength": 1.0
+    },
+    "gaussian_blur_high": {
+      "family": "gaussian_blur",
+      "severity": "high",
+      "strength": 2.0
+    },
+    "gaussian_noise_low": {
+      "family": "gaussian_noise",
+      "severity": "low",
+      "strength": 0.02
+    },
+    "gaussian_noise_medium": {
+      "family": "gaussian_noise",
+      "severity": "medium",
+      "strength": 0.05
+    },
+    "gaussian_noise_high": {
+      "family": "gaussian_noise",
+      "severity": "high",
+      "strength": 0.1
+    }
+  },
+  "test_patch_size": [
+    224,
+    224
+  ],
+  "original_patch_coordinates_reused": true,
+  "original_patch_selection_reused": true,
+  "perturbation_before_normalization": true,
+  "color_method": "RGB_optical_density_channel_scaling",
+  "color_channel_multipliers": "[1+strength,1,1-strength]",
+  "color_is_validated_he_stain_transform": false,
+  "blur_method": "scipy_gaussian_filter",
+  "blur_sigma_axes": [
+    "sigma_pixels",
+    "sigma_pixels",
+    0.0
+  ],
+  "blur_boundary_mode": "reflect",
+  "blur_truncate": 4.0,
+  "noise_method": "additive_rgb_gaussian",
+  "noise_sigma_in_rgb_unit_interval": true,
+  "noise_seed": 631,
+  "noise_seed_components": [
+    "seed",
+    "filename",
+    "patch_index",
+    "gaussian_noise"
+  ],
+  "same_noise_realization_across_severities": true,
+  "results_clipped_to_rgb_unit_interval": true,
+  "outputs_quantized_to_uint8": true,
+  "test_model_inference_performed": false,
+  "calibrators_refitted": false,
+  "validation_csv_sha256": "da638489bad8c77fef34df90127df99aa0610d8ed68e9777504bfc9d2005b3d6",
+  "preview_sha256": {
+    "Benign": "56f620025990d764540b193c398724a7305f98a47d1e3ee94d1ac18548364349",
+    "Malignant": "f4cb86f8f01b8aa6e5819522494b463d13a21da9ca6cdbf0f2f7eafe3c9ae38e"
+  }
+}
