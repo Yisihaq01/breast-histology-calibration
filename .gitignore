@@ -443,6 +443,13 @@ config.local.json
 *.pkl
 *.pickle
 
+# =========================================================
+# Allow verified BACH external-validation research results
+# Do not include original BACH dataset images
+# =========================================================
+
+!results/external_validation/bach/
+!results/external_validation/bach/efficientnet_b0/
 
 # =========================================================
 # End of project-specific exclusions
