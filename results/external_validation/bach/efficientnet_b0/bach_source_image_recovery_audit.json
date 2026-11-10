@@ -1,0 +1,22 @@
+{
+  "dataset": "BACH",
+  "status": "source_images_verified",
+  "source": "https://zenodo.org/records/3632035/files/ICIAR2018_BACH_Challenge.zip?download=1",
+  "archive_md5": "8ae1801334aa943c44627c1eef3631b2",
+  "source_images": 400,
+  "verified_original_rgb_hashes": 400,
+  "original_classes": {
+    "Normal": 100,
+    "Benign": 100,
+    "InSitu": 100,
+    "Invasive": 100
+  },
+  "saved_patch_manifest_entries": 6255,
+  "image_audit_sha256": "312b2f9a68514fec3c2082e4dacec08a65764f4b8002eb5760ea72639f8142e8",
+  "patch_manifest_sha256": "102d3564331c6e355e04505f60cf05dcf8318da444e397552b2b08733de8cad6",
+  "original_images_modified": false,
+  "patch_manifest_regenerated": false,
+  "model_inference_performed": false,
+  "cnn_retrained": false,
+  "calibrators_refitted": false
+}

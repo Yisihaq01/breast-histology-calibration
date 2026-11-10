@@ -1,0 +1,35 @@
+{
+  "batch_size": 32,
+  "calibrators_refitted": false,
+  "cnn_retrained": false,
+  "color_normalization": false,
+  "dataset": "BACH",
+  "drop_last": false,
+  "expected_batches": 196,
+  "manifest_sha256": "102d3564331c6e355e04505f60cf05dcf8318da444e397552b2b08733de8cad6",
+  "model_checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "model_inference_performed": false,
+  "normalization_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalization_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "num_workers": 2,
+  "original_images": 400,
+  "patch_size": 224,
+  "patch_tensor_checks": 11,
+  "patient_ids_verified": false,
+  "protocol_lock_sha256": "2d45dd06bbe1c2aafa89a1918bac915e151611c1d39d97eda8ea1fbf3e0087f3",
+  "random_augmentation": false,
+  "retained_patches": 6255,
+  "shuffle": false,
+  "source_mpp": 0.42,
+  "source_notebook_sha256": "0e9e0a5337aafc82d7449e6ff776734d9e4147dbe9f9efa7bf58d67b035eaefc",
+  "status": "PASS",
+  "target_mpp": 0.5
+}

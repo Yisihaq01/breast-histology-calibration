@@ -1,0 +1,62 @@
+{
+  "binary_label_mapping": {
+    "Benign": 0,
+    "InSitu": 1,
+    "Invasive": 1,
+    "Normal": 0
+  },
+  "calibration_metrics": [
+    "ece_10",
+    "brier",
+    "nll"
+  ],
+  "calibrators_refitted": false,
+  "classification_metrics": [
+    "balanced_accuracy",
+    "sensitivity",
+    "specificity",
+    "accuracy"
+  ],
+  "classification_threshold": 0.5,
+  "cnn_retrained": false,
+  "dataset": "BACH",
+  "ece_bin_details_file": "bach_external_ece_bin_details.csv",
+  "ece_bin_details_sha256": "ff90b23febcfd0c586d81f387e6c045b51d411cd553fc5932061293faab38940",
+  "ece_bin_rows": 30,
+  "ece_bins": 10,
+  "ece_definition": "10 equal-width bins of positive-class probability; weighted absolute difference between observed positive rate and mean predicted probability",
+  "evaluation_scope": "image_level",
+  "external_model_selected": false,
+  "external_threshold_optimized": false,
+  "four_class_subgroup_analysis_performed": false,
+  "image_predictions_sha256": "b6e5dc59709e06969cec264b27e8ff02ae717e458b81ae45570c88f9d8d7d245",
+  "inference_audit_sha256": "437dd36bb6c1d25ebf578bde6d6a58532f423355a9f166898c5c2cc64b37ea6c",
+  "methods": [
+    "uncalibrated",
+    "temperature",
+    "platt"
+  ],
+  "metric_rows": 3,
+  "model_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "nll_probability_clip": 1e-12,
+  "original_classes": {
+    "Benign": 100,
+    "InSitu": 100,
+    "Invasive": 100,
+    "Normal": 100
+  },
+  "original_images": 400,
+  "original_patch_predictions": 6255,
+  "patch_predictions_sha256": "70130618b5493825e15fb654956eca6c72addd89d5979a33690dd2ade8252061",
+  "patient_ids_verified": false,
+  "performance_metrics_file": "bach_external_performance_metrics.csv",
+  "performance_metrics_sha256": "71b0777c14fa2bb7d105a1e89a4caa464c52ab4dd00ae6f85acd21cbe0a71d7c",
+  "protocol_sha256": "2d45dd06bbe1c2aafa89a1918bac915e151611c1d39d97eda8ea1fbf3e0087f3",
+  "ranking_input": "image-level raw logit with frozen positive affine transformations",
+  "ranking_metrics": [
+    "auroc",
+    "auprc"
+  ],
+  "status": "PASS",
+  "uncertainty_analysis_performed": false
+}

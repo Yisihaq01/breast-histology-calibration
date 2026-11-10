@@ -1,0 +1,20 @@
+{
+  "dataset": "BACH",
+  "verification": "frozen_preprocessing_equivalence",
+  "status": "PASS",
+  "original_preprocessing_notebook": "Notebooks/01_breakhis_data_audit_and_split.ipynb",
+  "original_notebook_sha256": "0e9e0a5337aafc82d7449e6ff776734d9e4147dbe9f9efa7bf58d67b035eaefc",
+  "saved_manifest_sha256": "102d3564331c6e355e04505f60cf05dcf8318da444e397552b2b08733de8cad6",
+  "saved_configuration_sha256": "56b876b63f28f5957bb5026d30f7ae0e9df3f3d1698d6325636df03119e43d11",
+  "source_mpp": 0.42,
+  "target_mpp": 0.5,
+  "verified_images": 400,
+  "verified_patches": 6255,
+  "fallback_images": 0,
+  "max_tissue_fraction_difference": 1.1102230246251565e-16,
+  "comparison_csv_sha256": "3bc73db7962b64767f21b49c9c83b1495de9f95d2708c4cc22ae39f46d95fb88",
+  "manifest_modified": false,
+  "cnn_inference_performed": false,
+  "cnn_retrained": false,
+  "calibrators_refitted": false
+}

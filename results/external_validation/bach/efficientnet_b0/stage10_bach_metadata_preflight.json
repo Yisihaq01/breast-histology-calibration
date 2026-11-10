@@ -1,0 +1,34 @@
+{
+  "stage": 10,
+  "status": "metadata_verified_images_missing",
+  "repository_commit": "f0a018e",
+  "dataset": "BACH",
+  "source_images": 400,
+  "selected_patches": 6255,
+  "binary_label_mapping": {
+    "Normal": 0,
+    "Benign": 0,
+    "InSitu": 1,
+    "Invasive": 1
+  },
+  "patient_ids_verified": false,
+  "bach_images_ready": false,
+  "missing_image_count": 400,
+  "preprocessing_source_mpp": 0.42,
+  "preprocessing_target_mpp": 0.5,
+  "metadata_sha256": {
+    "bach_audit_summary.json": "a963e2c297b75df6039e3bffc31d09f55bd3e813dcaa448cbdfc10ddb89e1434",
+    "bach_binary_label_mapping.json": "6307b61d42db3c911612b3f00c3b217473f5e9001640001236db4a403a4a4861",
+    "bach_duplicate_audit.csv": "1964f1d6f1f467f8cf7580c9060a728bf64db7e446814b51328a967c27d0d7b4",
+    "bach_image_audit.csv": "312b2f9a68514fec3c2082e4dacec08a65764f4b8002eb5760ea72639f8142e8",
+    "bach_patch_audit.csv": "b7d47bb483f658d3985b8b6c6507149cf5f8bb6f35b4ceabef75fbc54b808d06",
+    "bach_patch_manifest.csv": "102d3564331c6e355e04505f60cf05dcf8318da444e397552b2b08733de8cad6",
+    "bach_preprocessing_config.json": "56b876b63f28f5957bb5026d30f7ae0e9df3f3d1698d6325636df03119e43d11",
+    "bach_verified_metadata.csv": "1c280f0902805fe6f9b0324d910a0852bb789145ed900c30d07cf7502adb24f7",
+    "microscopy_ground_truth.csv": "f4e1501e280790c839232b0b537c199408df660bd480117e6405696ee8821523",
+    "microscopy_ground_truth_with_headers.csv": "1d5e4ea840991727a5474a4b98d2d4077afcb8e832b162e91bb4fb4b71614b9e"
+  },
+  "model_inference_performed": false,
+  "cnn_retrained": false,
+  "calibrators_refitted": false
+}

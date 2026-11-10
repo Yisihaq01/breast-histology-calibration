@@ -1,0 +1,52 @@
+{
+  "binary_label_mapping": {
+    "Benign": 0,
+    "InSitu": 1,
+    "Invasive": 1,
+    "Normal": 0
+  },
+  "calibrators_refitted": false,
+  "class_specific_metrics": [
+    "class_accuracy",
+    "confusion_counts",
+    "mean_malignancy_probability",
+    "median_malignancy_probability",
+    "mean_probability_bias",
+    "brier",
+    "nll"
+  ],
+  "classification_threshold": 0.5,
+  "cnn_inference_performed": false,
+  "cnn_retrained": false,
+  "confusion_counts_reconciled": true,
+  "dataset": "BACH",
+  "evaluation_scope": "original_diagnostic_class_subgroups",
+  "external_threshold_optimized": false,
+  "image_predictions_sha256": "b6e5dc59709e06969cec264b27e8ff02ae717e458b81ae45570c88f9d8d7d245",
+  "images_per_class": 100,
+  "methods": [
+    "uncalibrated",
+    "temperature",
+    "platt"
+  ],
+  "model_checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "original_classes": [
+    "Normal",
+    "Benign",
+    "InSitu",
+    "Invasive"
+  ],
+  "overall_accuracy_reconciled": true,
+  "overall_brier_reconciled": true,
+  "overall_metrics_sha256": "71b0777c14fa2bb7d105a1e89a4caa464c52ab4dd00ae6f85acd21cbe0a71d7c",
+  "overall_nll_reconciled": true,
+  "patient_ids_verified": false,
+  "protocol_lock_sha256": "2d45dd06bbe1c2aafa89a1918bac915e151611c1d39d97eda8ea1fbf3e0087f3",
+  "ranking_metrics_within_class_computed": false,
+  "status": "PASS",
+  "subgroup_metrics_file": "bach_original_class_subgroup_metrics.csv",
+  "subgroup_metrics_sha256": "93f0fec8a4c6332a65a582449f2b1dc1db52790cc8d78ccc6ec458e5adb01ee5",
+  "subgroup_rows": 12,
+  "total_images": 400,
+  "uncertainty_analysis_performed": false
+}

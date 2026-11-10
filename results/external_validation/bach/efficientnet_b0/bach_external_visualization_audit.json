@@ -1,0 +1,55 @@
+{
+  "bootstrap_audit_sha256": "9445512eb1db06eacf40e2e08f3b51dc64b7c6510c03498cad31683d55e90684",
+  "bootstrap_replicates": 1000,
+  "bootstrap_rerun": false,
+  "bootstrap_seed": 631,
+  "calibrators_refitted": false,
+  "cnn_inference_performed": false,
+  "cnn_retrained": false,
+  "confidence_interval_type": "exploratory unadjusted percentile",
+  "dataset": "BACH",
+  "external_threshold_optimized": false,
+  "figure_count": 4,
+  "figures": {
+    "calibration": {
+      "filename": "bach_external_calibration_metrics_ci.png",
+      "sha256": "cc26c74fe76b7477747cf318b6f62405c02b979a4f549e3661a760cd2bab9d50",
+      "size_bytes": 132021
+    },
+    "classification": {
+      "filename": "bach_external_classification_ci.png",
+      "sha256": "6e047e9545b0a58d59418740a4689b593a03ea862df596ddc196942aafd8f4fa",
+      "size_bytes": 134473
+    },
+    "reliability": {
+      "filename": "bach_external_reliability_diagrams.png",
+      "sha256": "ba99ef10ad3db13e9f692635e1c3f4592f1220b782429224bbb36be44cb524ad",
+      "size_bytes": 225775
+    },
+    "subgroups": {
+      "filename": "bach_external_original_class_tradeoffs.png",
+      "sha256": "b8a66940d5d98e69cfc7d42a3cef2f73fb830dbc4cc8bda48c88e17ae74fe3dc",
+      "size_bytes": 152263
+    }
+  },
+  "image_predictions_sha256": "b6e5dc59709e06969cec264b27e8ff02ae717e458b81ae45570c88f9d8d7d245",
+  "methods": [
+    "uncalibrated",
+    "temperature",
+    "platt"
+  ],
+  "model_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "original_classes": [
+    "Normal",
+    "Benign",
+    "InSitu",
+    "Invasive"
+  ],
+  "original_images": 400,
+  "overall_metrics_sha256": "71b0777c14fa2bb7d105a1e89a4caa464c52ab4dd00ae6f85acd21cbe0a71d7c",
+  "patient_ids_verified": false,
+  "protocol_sha256": "2d45dd06bbe1c2aafa89a1918bac915e151611c1d39d97eda8ea1fbf3e0087f3",
+  "status": "PASS",
+  "subgroup_metrics_sha256": "93f0fec8a4c6332a65a582449f2b1dc1db52790cc8d78ccc6ec458e5adb01ee5",
+  "uncertainty_unit": "image"
+}

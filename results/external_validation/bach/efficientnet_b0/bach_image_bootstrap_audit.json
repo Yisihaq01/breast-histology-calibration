@@ -1,0 +1,83 @@
+{
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 631,
+  "bootstrap_type": "four-original-class-stratified, paired across frozen methods",
+  "calibrators_refitted": false,
+  "ci_method": "2.5th and 97.5th percentile, unadjusted",
+  "cnn_inference_performed": false,
+  "cnn_retrained": false,
+  "dataset": "BACH",
+  "draws_per_original_class_per_replicate": 100,
+  "external_threshold_optimized": false,
+  "image_predictions_sha256": "b6e5dc59709e06969cec264b27e8ff02ae717e458b81ae45570c88f9d8d7d245",
+  "image_replacement": true,
+  "methods": [
+    "uncalibrated",
+    "temperature",
+    "platt"
+  ],
+  "metrics": [
+    "auroc",
+    "auprc",
+    "balanced_accuracy",
+    "sensitivity",
+    "specificity",
+    "accuracy",
+    "ece_10",
+    "brier",
+    "nll"
+  ],
+  "model_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "multiple_comparison_adjustment": false,
+  "original_class_order": [
+    "Normal",
+    "Benign",
+    "InSitu",
+    "Invasive"
+  ],
+  "outputs": {
+    "intervals": {
+      "filename": "bach_image_bootstrap_metric_intervals.csv",
+      "rows": 27,
+      "sha256": "9737ec2316226ba89c078cb0bfd11cbec4f1ee1366ef88bc693dbe0c7d6c3bc8"
+    },
+    "paired_differences": {
+      "filename": "bach_image_bootstrap_paired_differences.csv",
+      "rows": 27,
+      "sha256": "f88927d3ffbb8f084f5e007a3af40383ae17985ccb0d5ef1b6347e2e3fd758e3"
+    },
+    "replicates": {
+      "filename": "bach_image_bootstrap_replicates.csv",
+      "rows": 27000,
+      "sha256": "2a9b8fcbbd4e93384c8c61b9a0c4eff4a0ed6d8e2af7a2e4759d6cb7dfb580ca"
+    },
+    "subgroup_intervals": {
+      "filename": "bach_original_class_bootstrap_intervals.csv",
+      "rows": 24,
+      "sha256": "969a4925527e8830125eea54656d81e2d20336147ee35a87b075a88acb836a65"
+    },
+    "subgroup_paired_differences": {
+      "filename": "bach_original_class_bootstrap_paired_differences.csv",
+      "rows": 24,
+      "sha256": "4302cd5d8414d7549e165e7b0ebc7d1ed3c17acf2cca755e44bae7c12b05afb1"
+    },
+    "subgroup_replicates": {
+      "filename": "bach_original_class_bootstrap_replicates.csv",
+      "rows": 24000,
+      "sha256": "3334bf5334aa9dfce07bcbbab55fe7c055735064a8a2de24f838e8e4501e5adf"
+    }
+  },
+  "overall_metrics_sha256": "71b0777c14fa2bb7d105a1e89a4caa464c52ab4dd00ae6f85acd21cbe0a71d7c",
+  "paired_difference_direction": "method minus reference_method",
+  "patient_ids_verified": false,
+  "protocol_sha256": "2d45dd06bbe1c2aafa89a1918bac915e151611c1d39d97eda8ea1fbf3e0087f3",
+  "resampled_images_per_replicate": 400,
+  "resampling_unit": "image (not patient)",
+  "status": "PASS",
+  "subgroup_metrics": [
+    "class_accuracy",
+    "brier"
+  ],
+  "subgroup_metrics_sha256": "93f0fec8a4c6332a65a582449f2b1dc1db52790cc8d78ccc6ec458e5adb01ee5",
+  "uncertainty_interpretation": "exploratory; patient grouping unknown; image dependence may make intervals overconfident"
+}

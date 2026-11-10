@@ -1,0 +1,40 @@
+{
+  "aggregation": "mean_raw_patch_logit_per_image",
+  "binary_label_mapping": {
+    "Benign": 0,
+    "InSitu": 1,
+    "Invasive": 1,
+    "Normal": 0
+  },
+  "classification_threshold": 0.5,
+  "dataset": "BACH",
+  "ece_bins": 10,
+  "evaluation_type": "external_validation",
+  "external_calibration_refitting_allowed": false,
+  "external_model_retraining_allowed": false,
+  "external_model_selection_allowed": false,
+  "external_threshold_optimization_allowed": false,
+  "image_normalization": "ImageNet mean and std",
+  "metadata_sha256": "1c280f0902805fe6f9b0324d910a0852bb789145ed900c30d07cf7502adb24f7",
+  "model_architecture": "efficientnet_b0",
+  "model_checkpoint": "final_epoch_5",
+  "model_checkpoint_sha256": "84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb",
+  "original_images": 400,
+  "patch_manifest_sha256": "102d3564331c6e355e04505f60cf05dcf8318da444e397552b2b08733de8cad6",
+  "patch_size": 224,
+  "patient_ids_verified": false,
+  "platt_intercept": -0.7096590060187311,
+  "platt_slope": 0.29141657172422586,
+  "preprocessing_config_sha256": "56b876b63f28f5957bb5026d30f7ae0e9df3f3d1698d6325636df03119e43d11",
+  "previous_protocol_sha256": "6fe91318e47f0f00a3ff11df69166fd0b401ab15129e4ee1faf3ecddf10e14cd",
+  "probability_methods": {
+    "platt": "sigmoid(a * mean_logit + b)",
+    "temperature": "sigmoid(mean_logit / T)",
+    "uncalibrated": "sigmoid(mean_logit)"
+  },
+  "selected_patches": 6255,
+  "source_mpp": 0.42,
+  "target_mpp": 0.5,
+  "temperature": 4.069193139210192,
+  "uncertainty_policy": "Exploratory image-level uncertainty only unless reliable patient identities are recovered."
+}
