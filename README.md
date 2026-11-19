@@ -1,167 +1,203 @@
-## Confidence Calibration Under Distribution Shift in Breast Histopathology
-Mashfika Jahan and Yisihaq Yemiru
+# Confidence Calibration Under Distribution Shift in Breast Histopathology
 
+**Mashfika Jahan and Yisihaq Yemiru**
 
 ## Project overview
+
 This repository contains our breast histopathology confidence-calibration research using the BreaKHis and BACH datasets. The study includes model development, post-hoc calibration, independent patient-level testing, magnification-shift evaluation, nine controlled distribution-shift conditions, and external validation using BACH.
 
-It provides the research code, frozen patient assignments and Development folds, preprocessing manifests, model and calibrator parameters, experimental protocols, predictions, evaluation metrics, bootstrap analyses, figures, and SHA-256 inventories. We evaluated a frozen EfficientNet-B0 classifier using uncalibrated predictions, temperature scaling, and Platt scaling. This is a research evaluation, not a clinical diagnostic system.
+It provides research code, frozen patient assignments and Development folds, preprocessing manifests, model and calibrator parameters, experimental protocols, predictions, evaluation metrics, bootstrap analyses, figures, and SHA-256 inventories. We evaluated a frozen EfficientNet-B0 classifier using uncalibrated predictions, temperature scaling, and Platt scaling. This is a research evaluation, **not a clinical diagnostic system**.
 
 ## Repository organization
-Location	Contents
-`Notebooks/`
-Jupyter/Google Colab notebooks for dataset audits, Development, training, calibration, independent Test evaluation, controlled shifts, and BACH validation.
-`Metadata/`
-Frozen BreaKHis patient assignments and Development folds; BreaKHis patch manifests and data audits.
-`Metadata/BACH_metadata/`
-BACH image and patch audits, binary label mapping, verified metadata, and the external patch manifest.
-`results/preliminary_baseline/`
-Early baseline experiments and associated results.
-`results/formal_development/`
-Development-fold predictions, ResNet-18/EfficientNet-B0 comparisons, architecture selection, and aggregation analyses.
-`results/final_development/`
-Final Development training records and associated checks.
-`results/posthoc_calibration/efficientnet_b0/`
-Calibration predictions, fitted parameters, fitting diagnostics, and lock records.
-`results/independent_test/efficientnet_b0/`
-Four-magnification predictions, discrimination and calibration metrics, reliability diagrams, patient-level bootstrap outputs, and SHA-256 inventory.
-`results/controlled_shifts/efficientnet_b0/`
-Frozen perturbation settings, shifted predictions, metrics, patient-level bootstrap analyses, figures, audits, and SHA-256 inventory.
-`results/external_validation/bach/efficientnet_b0/`
-28 BACH validation files: predictions, calibration and classification results, exploratory image-level bootstrap outputs, figures, protocol/audit records, README, and SHA-256 inventory.
+
+| Location | Contents |
+|---|---|
+| `Notebooks/` | Jupyter/Google Colab notebooks for dataset audits, Development, training, calibration, independent Test evaluation, controlled shifts, and BACH validation. |
+| `Metadata/` | Frozen BreaKHis patient assignments and Development folds; BreaKHis patch manifests and data audits. |
+| `Metadata/BACH_metadata/` | BACH image and patch audits, binary label mapping, verified metadata, and external patch manifest. |
+| `results/preliminary_baseline/` | Early baseline experiments and associated results. |
+| `results/formal_development/` | Development-fold predictions, ResNet-18/EfficientNet-B0 comparisons, architecture selection, and aggregation analyses. |
+| `results/final_development/` | Final Development training records and associated checks. |
+| `results/posthoc_calibration/efficientnet_b0/` | Calibration predictions, fitted parameters, fitting diagnostics, and lock records. |
+| `results/independent_test/efficientnet_b0/` | Four-magnification predictions, discrimination and calibration metrics, reliability diagrams, patient-level bootstrap outputs, and SHA-256 inventory. |
+| `results/controlled_shifts/efficientnet_b0/` | Frozen perturbation settings, shifted predictions, metrics, patient-level bootstrap analyses, figures, example BreaKHis-derived shift previews, audits, and SHA-256 inventory. |
+| `results/external_validation/bach/efficientnet_b0/` | Finalized 28-file BACH result set: predictions, calibration and classification results, exploratory image-level bootstrap outputs, aggregate figures, protocol/audit records, README, and SHA-256 inventory. |
 
 ## Frozen data partitions and manifests
-BreaKHis uses an original patient-disjoint split (random seed 631) with 49 Development patients, 16 Calibration patients, and 16 independent Test patients. Development used three patient-grouped folds. The original assignments and patch selection are recorded in:
 
-`Metadata/breakhis_patient_split.csv`
-`Metadata/breakhis_development_folds.csv`
-`Metadata/breakhis_development_all_patch_manifest.csv`
-`Metadata/breakhis_calibration_40x_patch_manifest.csv`
-`Metadata/breakhis_test_all_magnification_patch_manifest.csv`
-`Metadata/BACH_metadata/bach_patch_manifest.csv`
-The Metadata/ directory also contains magnification-specific Test manifests and image/audit records. Dataset images are not committed to this repository.
+BreaKHis uses a patient-disjoint split (random seed **631**) with **49 Development**, **16 Calibration**, and **16 independent Test** patients. Development used three patient-grouped folds. The frozen assignments and patch selection are recorded in:
+
+- `Metadata/breakhis_patient_split.csv`
+- `Metadata/breakhis_development_folds.csv`
+- `Metadata/breakhis_development_all_patch_manifest.csv`
+- `Metadata/breakhis_calibration_40x_patch_manifest.csv`
+- `Metadata/breakhis_test_all_magnification_patch_manifest.csv`
+- `Metadata/BACH_metadata/bach_patch_manifest.csv`
+
+The `Metadata/` directory also contains magnification-specific Test manifests and image/audit records. **The complete source-image datasets are not committed to GitHub.** Two BreaKHis-derived controlled-shift preview images are retained as explicitly identified below; see [Dataset distribution in this repository](#dataset-distribution-in-this-repository).
 
 ## Frozen model and calibration
-The selected final classifier is EfficientNet-B0, Development epoch 5. The checkpoint is stored separately from GitHub; its verified SHA-256 is:
 
+The final classifier is **EfficientNet-B0**, trained for five Development epochs; the frozen checkpoint is the epoch-5 model. Its weights are stored separately from GitHub. Verified checkpoint SHA-256:
+
+```text
 84ea0871a309f3d68b8958b68b6da4f01adb31d3109fa4e0fc57f6670b63c9bb
-Patch logits are averaged to obtain one image-level raw logit z. The fixed probability transformations are:
+```
 
-Uncalibrated: sigmoid(z)
-Temperature:  sigmoid(z / 4.069193139210192)
-Platt:        sigmoid(0.29141657172422586 * z - 0.7096590060187311)
-The classification threshold is 0.5. Model selection and calibrator fitting used Development and Calibration data, respectively; the frozen model and calibrators were not refitted on independent Test or BACH data.
+Patch logits are averaged to obtain one image-level logit, `z`. The frozen probability transformations are:
 
-The fitted values and their lock records are available in `results/posthoc_calibration/efficientnet_b0/`, especially `calibration_fitted_parameters.json`.
+```text
+Uncalibrated:  sigmoid(z)
+Temperature:   sigmoid(z / 4.069193139210192)
+Platt:         sigmoid(0.29141657172422586 * z - 0.7096590060187311)
+```
+
+The fixed classification threshold is **0.5**. Model selection and calibrator fitting used Development and Calibration data, respectively; the model and calibrators were not refitted on independent Test or BACH data.
+
+Fitted values and lock records are in `results/posthoc_calibration/efficientnet_b0/`, including `calibration_fitted_parameters.json`.
 
 ## Experimental results available in the repository
-The saved CSV files contain the complete numerical outputs; the PNG files are figures generated by the corresponding notebooks. The repository includes:
 
-Evaluation	Main result file	Additional outputs
-Development and model selection	
-`architecture_pooled_oof_metrics.csv`
-Architecture comparison, aggregation sensitivity, patient-bootstrap summaries, and selection audit.
-Calibration	
-`calibration_fitting_diagnostics.csv`
-Fitted parameters, image predictions, patch logits, and calibration lock.
-Independent Test	
-`test_performance_metrics_by_magnification.csv`
-Four-magnification image/patch predictions, ECE bins, reliability diagrams, and 1,000 patient-bootstrap resamples.
-Controlled shifts	
-`stage9_performance_metrics_all_conditions.csv`
-Shift-versus-clean comparisons, original predictions, confidence intervals, figures, and 1,000 patient-bootstrap resamples.
-External BACH	
-`bach_external_performance_metrics.csv`
-400 image-level predictions, 6,255 patch predictions, original-class subgroup metrics, ECE bins, figures, and 1,000 exploratory image-level bootstrap resamples.
-The evaluations report discrimination (including AUROC), calibration (ECE, Brier score, negative log-likelihood), and fixed-threshold classification results where applicable. The saved audits document their provenance. For detailed methodology and contents of each finalized result set, see:
+The saved CSV files contain numerical outputs. The figure PNGs are generated by the corresponding analysis notebooks; their contents vary between aggregate graphs and the explicitly identified BreaKHis-derived image previews.
 
-`results/independent_test/efficientnet_b0/STAGE8_RESULTS_README.md`
-`results/controlled_shifts/efficientnet_b0/STAGE9_RESULTS_README.md`
-`results/external_validation/bach/efficientnet_b0/BACH_EXTERNAL_VALIDATION_README.md`
+| Evaluation | Main result file | Additional outputs |
+|---|---|---|
+| Development and model selection | `architecture_pooled_oof_metrics.csv` | Architecture comparison, aggregation sensitivity, patient-bootstrap summaries, and selection audit. |
+| Calibration | `calibration_fitting_diagnostics.csv` | Fitted parameters, image predictions, patch logits, and calibration lock. |
+| Independent Test | `test_performance_metrics_by_magnification.csv` | Four-magnification image/patch predictions, ECE bins, reliability diagrams, and 1,000 patient-bootstrap resamples. |
+| Controlled shifts | `stage9_performance_metrics_all_conditions.csv` | Shift-versus-clean comparisons, original predictions, confidence intervals, figures, and 1,000 patient-bootstrap resamples. |
+| External BACH | `bach_external_performance_metrics.csv` | 400 image-level predictions, 6,255 patch predictions, original-class subgroup metrics, ECE bins, figures, and 1,000 exploratory image-level bootstrap resamples. |
+
+The evaluations report discrimination (including AUROC), calibration (ECE, Brier score, negative log-likelihood), and fixed-threshold classification results where applicable. Saved audits document provenance. For detailed methods and the contents of the finalized result sets, see:
+
+- `results/independent_test/efficientnet_b0/STAGE8_RESULTS_README.md`
+- `results/controlled_shifts/efficientnet_b0/STAGE9_RESULTS_README.md`
+- `results/external_validation/bach/efficientnet_b0/BACH_EXTERNAL_VALIDATION_README.md`
 
 ## Controlled-shift settings
-The exact settings are recorded in `stage9_pre_inference_protocol_lock.json`:
 
-Perturbation	Low	Medium	High
-Stain-like optical-density scaling	0.05	0.10	0.20
-Gaussian blur (sigma, patch pixels)	0.5	1.0	2.0
-Gaussian noise (sigma, RGB [0, 1])	0.02	0.05	0.10
-These are controlled synthetic perturbations; the stain-like transformation should not be confused with a validated H&E stain-normalization procedure.
+The exact settings are recorded in `stage9_pre_inference_protocol_lock.json` under the controlled-shifts results directory.
+
+| Perturbation | Low | Medium | High |
+|---|---:|---:|---:|
+| Stain-like optical-density scaling | 0.05 | 0.10 | 0.20 |
+| Gaussian blur (σ, patch pixels) | 0.5 | 1.0 | 2.0 |
+| Gaussian noise (σ, RGB intensity on [0, 1]) | 0.02 | 0.05 | 0.10 |
+
+These are controlled **synthetic** perturbations; the stain-like transformation is not a validated H&E stain-normalization procedure.
 
 ## BACH external validation and SHA-256 inventory
-BACH contains 100 images in each of four original classes: Normal, Benign, InSitu, and Invasive. The recorded binary mapping is Normal + Benign = nonmalignant (0) and InSitu + Invasive = malignant (1). The 400 source images were processed at a target resolution of 0.50 µm/pixel, resulting in 6,255 selected tissue patches.
 
-`results/external_validation/bach/efficientnet_b0/` contains the finalized 28-file result set:
+BACH contains **100 images** in each of four original classes: Normal, Benign, InSitu, and Invasive. The recorded binary mapping is **Normal + Benign → nonmalignant (0)** and **InSitu + Invasive → malignant (1)**. The 400 source images were processed at a target resolution of **0.50 µm/pixel**, resulting in **6,255** selected tissue patches.
 
-26 research output files (CSVs, JSON audit/protocol records, and PNG figures).
-BACH_EXTERNAL_VALIDATION_README.md, describing that evaluation in detail.
-`bach_package_file_inventory.csv`, listing the SHA-256 and byte size of the other 27 files. The inventory does not hash itself.
-The locked BACH evaluation protocol SHA-256 is:
+The finalized **28-file** result set is in `results/external_validation/bach/efficientnet_b0/`:
 
+- **26 research output files:** CSVs, JSON audit/protocol records, and aggregate PNG figures.
+- **`BACH_EXTERNAL_VALIDATION_README.md`:** detailed evaluation methodology and output descriptions.
+- **`bach_package_file_inventory.csv`:** SHA-256 hashes and byte sizes for the **other 27 files**; the inventory does not hash itself.
+
+Locked BACH evaluation protocol SHA-256:
+
+```text
 2d45dd06bbe1c2aafa89a1918bac915e151611c1d39d97eda8ea1fbf3e0087f3
-The original packaged ZIP is held separately in the project backup, not in the committed result directory. The completed ZIP's recorded SHA-256 is:
+```
 
+The original packaged ZIP is held in a separate project backup, not the committed result directory. Recorded ZIP SHA-256:
+
+```text
 9007e82790e7e93a82ad86727fbe906017e9419ec18ee205e26624200afa952c
-To check a file against the recorded inventory, use sha256sum <filename> on Linux or Get-FileHash <filename> -Algorithm SHA256 in Windows PowerShell. The SHA-256 inventory records the original file bytes. Git's Windows CRLF conversion can change the hash of a text-file checkout without changing its research content; for byte-exact verification, use a consistent LF checkout or the original backed-up ZIP. Do not alter archived result files just to make hashes match.
+```
+
+To check a file against the inventory, use `sha256sum` on Linux or `Get-FileHash -Algorithm SHA256` in Windows PowerShell. The inventory records the **original file bytes**. Git's CRLF conversion on Windows can change a text-file checkout's hash without changing its research content. For byte-exact verification, use a consistent LF checkout or the original backed-up ZIP. **Do not alter archived result files merely to make hashes match.**
 
 ## Dataset attribution and usage rights
-This project uses the BreaKHis and BACH breast histopathology datasets. The dataset creators retain their own rights; the license terms below apply to the source data, not automatically to this repository's code or analysis files.
 
-## BreaKHis
-Official source: BreaKHis — Federal University of Paraná (UFPR).
-Attribution: Spanhol, F. A., Oliveira, L. S., Petitjean, C., & Heutte, L. (2016). A dataset for breast cancer histopathological image classification. IEEE Transactions on Biomedical Engineering, 63(7), 1455–1462. https://doi.org/10.1109/TBME.2015.2496264
-Usage terms: The official BreaKHis site identifies Creative Commons Attribution 4.0 International (CC BY 4.0) and asks researchers using the data to cite the paper above. Its access instructions specifically describe noncommercial research use. Review the original terms before any other use.
+This project uses the **BreaKHis** and **BACH** breast histopathology datasets. Dataset creators retain their own rights. The source-data licenses below do not automatically apply to all code or analysis files in this repository.
 
-## BACH (ICIAR 2018 Grand Challenge)
-Official dataset: BACH on Zenodo; official challenge dataset information.
-License: The organizers identify Creative Commons Attribution–NonCommercial–NoDerivatives (CC BY-NC-ND). Credit the dataset creators and their publications. Do not redistribute original BACH images or modified/resampled image patches under this repository; public sharing of adaptations requires separate permission under the stated NoDerivatives terms.
-Principal publication: Aresta, G., et al. (2019). BACH: Grand challenge on breast cancer histology images. Medical Image Analysis, 56, 122–139. https://doi.org/10.1016/j.media.2019.05.010
-Additional publications identified by the dataset creators: Araújo, T., et al. (2017). Classification of breast cancer histology images using convolutional neural networks. PLOS ONE, 12(6), e0177544. https://doi.org/10.1371/journal.pone.0177544; Fondón, I., et al. (2018). Automatic classification of tissue malignancy for breast carcinoma diagnosis. Computers in Biology and Medicine, 96, 41–51. https://doi.org/10.1016/j.compbiomed.2018.03.003
-Publication notice: The BACH challenge website asks teams to notify the organizers about publications based wholly or partly on its data or results.
+### BreaKHis
+
+- **Official source:** BreaKHis, Federal University of Paraná (UFPR).
+- **Attribution:** Spanhol, F. A., Oliveira, L. S., Petitjean, C., & Heutte, L. (2016). A dataset for breast cancer histopathological image classification. *IEEE Transactions on Biomedical Engineering, 63*(7), 1455–1462. https://doi.org/10.1109/TBME.2015.2496264
+- **Usage terms:** The source record identifies Creative Commons Attribution 4.0 International (**CC BY 4.0**) and requests citation of the paper above. Its access instructions also describe noncommercial research use. Review the source terms before any other use.
+
+### BACH (ICIAR 2018 Grand Challenge)
+
+- **Official dataset:** [BACH on Zenodo](https://zenodo.org/records/3632035) and the original challenge documentation.
+- **License:** Creative Commons Attribution–NonCommercial–NoDerivatives (**CC BY-NC-ND**) as identified by the organizers. Credit the dataset creators and their publications. Do not publicly redistribute original BACH images or modified/resampled image patches as part of this repository; separate permission may be required for sharing adaptations.
+- **Principal publication:** Aresta, G., et al. (2019). BACH: Grand challenge on breast cancer histology images. *Medical Image Analysis, 56*, 122–139. https://doi.org/10.1016/j.media.2019.05.010
+- **Additional publications identified by the dataset creators:**
+  - Araújo, T., et al. (2017). Classification of breast cancer histology images using convolutional neural networks. *PLOS ONE, 12*(6), e0177544. https://doi.org/10.1371/journal.pone.0177544
+  - Fondón, I., et al. (2018). Automatic classification of tissue malignancy for breast carcinoma diagnosis. *Computers in Biology and Medicine, 96*, 41–51. https://doi.org/10.1016/j.compbiomed.2018.03.003
+- **Publication notice:** The BACH challenge website asks teams to notify the organizers about publications based wholly or partly on its data or results.
 
 ## Dataset distribution in this repository
-The repository does not include the original BreaKHis or BACH image datasets or processed BACH image patches. It contains research code, manifests, metadata, numeric predictions and evaluation results, figures, and reproducibility records. Users must obtain source images through the official dataset providers and follow their applicable terms. The preprocessing used for internal evaluation (including BACH resampling and patch extraction) does not grant permission to redistribute adapted images.
+
+**The complete original BreaKHis and BACH image datasets, BACH image archives, resampled BACH images, and extracted BACH image patches are not distributed in the current repository files.** Dataset users must obtain the source images from the original providers and follow the applicable terms. Internal preprocessing, resampling, and patch extraction do not confer permission to redistribute adapted BACH images.
+
+Following the November 2026 notebook-output cleanup, the current notebook files are intended to omit embedded microscopy-image previews; the code, Markdown, and saved numerical artifacts remain. **Two small BreaKHis-derived image-preview figures are deliberately retained** in the controlled-shift results directory:
+
+- `results/controlled_shifts/efficientnet_b0/stage9_shift_preview_benign.png`
+- `results/controlled_shifts/efficientnet_b0/stage9_shift_preview_malignant.png`
+
+These preview figures show clean and synthetically shifted BreaKHis patches. They are **not** BACH images, and they are credited to the BreaKHis source cited above. They remain part of the original Stage 9 results inventory and should not be removed without also revising the corresponding preview references and SHA-256 inventory.
+
+**History note:** Clearing embedded notebook outputs from the current branch does not erase files or image outputs that may remain accessible in older Git commits. This section describes the intended current repository content; the live GitHub files and history should be checked separately.
 
 ## Software environment
-The notebooks were run in Google Colab. The following versions were recorded in saved notebook outputs from different runtime sessions; they do not constitute one completely pinned environment.
 
-Component	Recorded version	Notebook evidence
-Python	3.13.16	06_efficientnet_b0_final_development_training.ipynb
-PyTorch (Development, training, calibration)	2.11.0+cu130	03_breakhis_formal_development.ipynb, 05_efficientnet_b0_formal_development.ipynb, 06_efficientnet_b0_final_development_training.ipynb, 07_efficientnet_b0_posthoc_calibration.ipynb
-Torchvision (Development)	0.26.0+cu130	03_breakhis_formal_development.ipynb, 05_efficientnet_b0_formal_development.ipynb
-PyTorch (independent Test)	2.14.1+cu130	08_efficientnet_b0_independent_test_evaluation.ipynb
-PyTorch (early 40× data audit)	2.11.0+cpu	01_breakhis_data_audit_and_split.ipynb
-Other libraries imported by the notebooks include NumPy, pandas, SciPy, scikit-learn, Matplotlib, Pillow, PyYAML, tqdm, kagglehub, requests, statsmodels, and IPython/Google Colab packages. Their exact original versions were not consistently recorded. The repository's original requirements.txt is not a complete environment lockfile. Do not assume a current installation matches the original runtime exactly.
+The notebooks ran in **Google Colab**. The following versions were recorded across different runtime sessions; they do **not** constitute one completely pinned environment.
 
-To capture versions in a new environment, run python --version, python -m pip list, or python -m pip freeze > runtime_pip_freeze.txt. This describes the new environment and does not retroactively establish original package versions.
+| Component | Recorded version | Notebook evidence |
+|---|---|---|
+| Python | `3.13.16` | `06_efficientnet_b0_final_development_training.ipynb` |
+| PyTorch (Development, training, calibration) | `2.11.0+cu130` | `03_breakhis_formal_development.ipynb`, `05_efficientnet_b0_formal_development.ipynb`, `06_efficientnet_b0_final_development_training.ipynb`, `07_efficientnet_b0_posthoc_calibration.ipynb` |
+| Torchvision (Development) | `0.26.0+cu130` | `03_breakhis_formal_development.ipynb`, `05_efficientnet_b0_formal_development.ipynb` |
+| PyTorch (independent Test) | `2.14.1+cu130` | `08_efficientnet_b0_independent_test_evaluation.ipynb` |
+| PyTorch (early 40× data audit) | `2.11.0+cpu` | `01_breakhis_data_audit_and_split.ipynb` |
+
+Other imported libraries include NumPy, pandas, SciPy, scikit-learn, Matplotlib, Pillow, PyYAML, tqdm, kagglehub, requests, statsmodels, and IPython/Google Colab packages. Their exact original versions were not consistently recorded. The repository's original `requirements.txt` is not a complete environment lockfile. Do not assume a current installation matches the original runtime exactly.
+
+To capture **new-environment** package versions:
+
+```bash
+python --version
+python -m pip list
+python -m pip freeze > runtime_pip_freeze.txt
+```
+
+This records the new environment; it does **not** retroactively establish original package versions.
 
 ## Reproducing the work
-Two levels of reproduction are possible:
 
-Review saved results without rerunning the CNN. Clone this repository and inspect the archived predictions, metrics, bootstrap CSVs, plots, and JSON audits in the results/ directories above. The displayed result tables can be reconstructed from their corresponding metric CSVs without downloading the original histology images or training new models.
-Repeat the original experiment workflow. Obtain the original datasets and the separately backed-up EfficientNet-B0 checkpoint (or explicitly repeat Development training). Open the existing notebooks in Colab, use the frozen manifests/parameters, and follow the notebook sequence below. Full inference requires the underlying images and the verified checkpoint; neither is included in GitHub.
+Two levels of reproduction are possible.
 
-## Notebook execution sequence
-The original notebooks are saved under `Notebooks/`. For the full workflow, the logical order is:
+1. **Review the saved results without rerunning the CNN.** Clone this repository and inspect the predictions, metrics, bootstrap CSVs, plots, and JSON audits under `results/`. Summary values can be reconstructed from corresponding metric CSVs without downloading source images or training a model.
+2. **Repeat the original experiment workflow.** Obtain source datasets from official providers and the separately backed-up EfficientNet-B0 checkpoint, or explicitly rerun Development training. Follow the frozen manifests, parameters, and notebook sequence below. Full inference needs both source images and the verified checkpoint; neither is included in GitHub.
 
-BreaKHis data audit and fixed split: 01_breakhis_data_audit_and_split.ipynb, then 02_breakhis_all_magnification_audit.ipynb. The data audit uses kagglehub.dataset_download("ambarish/breakhis"); verify patient assignments and patch manifests before proceeding.
-Development and model comparison: 03_breakhis_formal_development.ipynb, followed by 05_efficientnet_b0_formal_development.ipynb. The selection rule and Development comparison are preserved in results/formal_development/efficientnet_b0/cross_fold_analysis/.
-Final Development model: 06_efficientnet_b0_final_development_training.ipynb. For artifact-only reproduction, restore the original verified epoch-5 checkpoint from the separately stored CIS631_EfficientNetB0_Final_Stage6_Backup.zip; do not retrain unnecessarily.
-Calibration: 07_efficientnet_b0_posthoc_calibration.ipynb. Fit only on the original Calibration patients or reuse the original locked parameters when reproducing later evaluations.
-Independent Test: 08_efficientnet_b0_independent_test_evaluation.ipynb. This generates results for all four magnifications, reliability plots, and patient-bootstrap outputs.
-Controlled shifts: 09_efficientnet_b0_controlled_distribution_shifts.ipynb. Use the same frozen Test cohort, checkpoint, calibration parameters, and recorded perturbation protocol.
-BACH preparation and external evaluation: 04_external_data_preparation.ipynb. This notebook includes an earlier metadata-preparation section and a later frozen external-evaluation section, so its number does not represent the final execution position. The original BACH ZIP source is recorded as https://zenodo.org/records/3632035/files/ICIAR2018_BACH_Challenge.zip?download=1. Verify against the committed BACH metadata/manifest and evaluation protocol.
-The notebooks have Colab-specific setup and some absolute /content/ paths. Reproduction may require restoring images/checkpoints to the recorded paths. Do not regenerate the frozen patient splits, select a new checkpoint based on Test results, or refit calibration on external data if the goal is to reproduce the recorded evaluation.
+### Notebook execution sequence
+
+The notebooks are under `Notebooks/`. The logical research order is:
+
+1. **BreaKHis data audit and fixed split:** `01_breakhis_data_audit_and_split.ipynb`, then `02_breakhis_all_magnification_audit.ipynb`. The data audit uses `kagglehub.dataset_download("ambarish/breakhis")`. Verify patient assignments and patch manifests before proceeding.
+2. **Development and model comparison:** `03_breakhis_formal_development.ipynb`, then `05_efficientnet_b0_formal_development.ipynb`. The selection records are under `results/formal_development/efficientnet_b0/cross_fold_analysis/`.
+3. **Final Development model:** `06_efficientnet_b0_final_development_training.ipynb`. For artifact-only reproduction, restore the verified epoch-5 checkpoint from the separately stored `CIS631_EfficientNetB0_Final_Stage6_Backup.zip`; avoid unnecessary retraining.
+4. **Calibration:** `07_efficientnet_b0_posthoc_calibration.ipynb`. Fit on the original Calibration patients only, or reuse the locked parameters when reproducing later evaluations.
+5. **Independent Test:** `08_efficientnet_b0_independent_test_evaluation.ipynb`. Contains the four-magnification evaluation, reliability plots, and patient-bootstrap outputs.
+6. **Controlled shifts:** `09_efficientnet_b0_controlled_distribution_shifts.ipynb`. Use the same frozen Test cohort, checkpoint, calibrators, and recorded perturbation protocol.
+7. **BACH preparation and external evaluation:** `04_external_data_preparation.ipynb`. This notebook contains earlier metadata preparation and a later frozen external-evaluation section, so its number does **not** indicate its final execution position. The original archive source is documented at [BACH on Zenodo](https://zenodo.org/records/3632035/files/ICIAR2018_BACH_Challenge.zip?download=1). Verify the committed BACH metadata, manifests, and evaluation protocol.
+
+The notebooks contain Colab-specific setup and some absolute `/content/` paths. Reproduction may require restoring images and checkpoints to the recorded locations. Do not regenerate the frozen patient splits, select a checkpoint using Test data, or refit calibration on BACH when reproducing the recorded evaluation.
 
 ## Reading and verifying result files
-The Development, calibration, Test, controlled-shift, and BACH result folders each contain the original CSV/JSON outputs needed to inspect their analysis. Refer to the associated audit records for inputs, counts, and protocol checks.
-Independent Test SHA-256 inventory: `stage8_package_file_inventory.csv` (32 entries).
-Controlled-shift SHA-256 inventory: `stage9_package_file_inventory.csv` (48 entries).
-BACH SHA-256 inventory: `bach_package_file_inventory.csv` (27 entries for the other 27 files in its 28-file directory).
+
+The Development, Calibration, Test, controlled-shift, and BACH result folders include the CSV/JSON outputs for their saved analyses. Refer to each audit for inputs, counts, and protocol checks.
+
+- Independent Test inventory: `stage8_package_file_inventory.csv` (**32 entries**).
+- Controlled-shift inventory: `stage9_package_file_inventory.csv` (**48 entries**).
+- BACH inventory: `bach_package_file_inventory.csv` (**27 entries** for the other 27 files in its 28-file results directory).
 
 ## Scope and limitations
-The independent BreaKHis Test evaluation covers only 16 patients from one patient-disjoint split. Patient-level bootstrap does not replace repeating the entire training and calibration workflow over multiple splits.
-The nine image perturbations are synthetic; magnification changes and external BACH images represent different evaluation settings.
-Temperature scaling and positive-slope Platt scaling preserve AUROC by construction. Changes in sensitivity and specificity at the fixed 0.5 threshold are operating-point changes, not improvements in ranking.
-Verified patient identifiers are unavailable for the 400 BACH images, so its bootstrap results are exploratory image-level estimates, not patient-level confidence intervals.
-This work is an evaluation of model confidence and robustness; it is not validated for clinical use.
+
+The independent BreaKHis Test evaluation covers **16 patients** from one patient-disjoint split. Patient-level bootstrap does not replace repeating the entire training and calibration pipeline across multiple splits. The nine image perturbations are synthetic; magnification changes and BACH images represent different evaluation settings. Temperature scaling and positive-slope Platt scaling preserve AUROC by construction. Sensitivity and specificity changes at a fixed 0.5 probability threshold are **operating-point changes**, not ranking improvements.
+
+BACH has no verified patient identifiers for the 400 images, so its bootstrap results are **exploratory image-level estimates**, not patient-level confidence intervals. This is an evaluation of model confidence and robustness, not a clinically validated system.
